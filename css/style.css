@@ -31,7 +31,7 @@ html,
 body {
 	height: 100%;
 	line-height: 1;
-	background: #3fc9ff;
+	background: #ffffff;
 	font-size: 15px;
 	color: #252b42;
 	font-weight: 500;
@@ -130,4 +130,66 @@ body {
 }
 .icons {
     margin-right: 28px;
+}
+/* ----BIG-LOGO-------------------------------------------------------------------- */
+.main {
+}
+.mail__page {
+}
+.page__container {
+}
+.page__body {
+    
+}
+.page__title {
+    margin-top:260px;
+    position: absolute;
+    z-index: 2;
+    color: #1F1F1F;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.page__text {
+    position: absolute;
+    margin-top: 335px;
+    z-index: 2;
+    color: #1F1F1F;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.page__button {
+    width: 200px;
+    height: 45px;
+    flex-shrink: 0;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FF8126;
+    margin-top: 403px;
+    position: absolute;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+    line-height: normal;
+    z-index: 2;
+}
+.page__logo {
+}
+._ibg {
+    position: relative;
+}
+._ibg img{
+    margin-top: 135px;
+    position: absolute;
+    width: 100%;
+}
+.page__button:hover{
+    background-color: #ffffff;
+    color: #FF8126;
 }
