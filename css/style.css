@@ -31,11 +31,11 @@ html,
 body {
 	height: 100%;
 	line-height: 1;
-	background: #b99015;
-	font-size: 14px;
+	background: #3fc9ff;
+	font-size: 18px;
 	color: #252b42;
 	font-weight: 500;
-	font-family: Chivo;
+	font-family: ;
 }
 /* ---------------------------------------------------------------------------- */
 .wrapper {
@@ -53,5 +53,5 @@ body {
 }
 /* -----HEADER----------------------------------------------------------------- */
 .header__logo {
-
+    
 }

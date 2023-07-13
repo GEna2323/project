@@ -35,7 +35,7 @@ body {
 	font-size: 14px;
 	color: #252b42;
 	font-weight: 500;
-	font-family: Montserrat;
+	font-family: Smooch;
 }
 /* ---------------------------------------------------------------------------- */
 .wrapper {
@@ -51,4 +51,4 @@ body {
 	margin: 0px auto;
 	box-sizing: content-box;
 }
-/* &display=swap для шрифтів*/
+/* &display=swap&subset=cyrillic-ext для шрифтів*/
