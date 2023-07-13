@@ -11,21 +11,22 @@
 <?php
 require_once("admin/param.php");
 
-$query = "select id, foto, model, countclothers from clothes";
+$query = "select id, name from Firms";
 
 $result = mysqli_query($dbc, $query) or die ("Query Error");
 
-echo "<table border='1'><tr><th>№</th><th>Фото</th><th>Модель</th><th>Кількість</th><th>Детальніше</th></tr>";
+
 
 $num = 1;
+echo "<ul>";
 while ($row = mysqli_fetch_array($result)){
-    if (empty($row['foto'])){
-        $row['foto'] = 'noPhoto.png';
-    }
-    echo "<tr><td>$num</td><td><img width='150px' src='imagines/{$row['foto']}'></td><td>{$row['model']}</td><td>{$row['countclothers']}</td><td><a href='info.php?id={$row['id']}'>Детальніше</a></td>";
+
+    echo "<li>$num {$row['name']}</li>";
     $num++;
+
 }
-echo "</table>";
+
+echo "</ul>";
 
 mysqli_close($dbc);
 ?>
