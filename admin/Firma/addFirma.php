@@ -20,7 +20,7 @@
     }
     elseif(isset($_POST['send'], $_POST['firma']) && !empty($_POST['firma'])){
 
-        require_once("param.php");
+        require_once("../param.php");
 
         $queryChek = "select id from Firms where name = '{$_POST['firma']}'";
         $resultChek = mysqli_query($dbc, $queryChek) or die("Query Error");
