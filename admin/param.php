@@ -1,6 +1,6 @@
 <?php
 
-$dbc = mysqli_connect('localhost','root','','GVShop') or die("Server Error");
+$dbc = mysqli_connect('localhost','root','','GVShop','3306') or die("Server Error");
 
 ?>
 
