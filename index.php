@@ -15,7 +15,7 @@ session_start();
 <div class="wrapper">
     <header class="header">
         <div class="header__container _container">
-            <a href="index.html" class="header__logo">
+            <a href="index.php" class="header__logo">
                 <img src="img/logo/01.svg" alt="logo" class="logo__img">
             </a>
             <nav class="header__menu menu">
