@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,17 +14,21 @@
 </head>
 <body>
 <?php
-
+require_once("admin/param.php");
     if (isset($_POST['LogIn'], $_POST['login'], $_POST['loginPassword']) && !empty($_POST['login']) && !empty($_POST['loginPassword'])){
 
-        require_once("admin/param.php");
 
-        $query = "select login, email from users where login = '{$_POST['login']}' and password = sha1('{$_POST['loginPassword']}')";
+
+        $query = "select id, login, email from users where login = '{$_POST['login']}' and password = sha1('{$_POST['loginPassword']}')";
         $result = mysqli_query($dbc, $query) or die("Query Error");
         $test = mysqli_num_rows($result);
 
         if ($test > 0){
         $row = mysqli_fetch_array($result);
+
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_login'] = $row['login'];
+        $_SESSION['user_email'] = $row['email'];
 
 
 ?>
@@ -29,7 +36,8 @@
             <div class="text">
                 <p>Login - <?=$row['login']?></p>
                 <p>E-mail - <?=$row['email']?></p>
-                <p>Back - <a href="index.html">Click</a></p>
+                <p>Back - <a href="index.php">Click</a></p>
+                <p>Sign Out - <a href="exit.php">Click</a></p>
             </div>
         </div>
 <?php
@@ -37,12 +45,27 @@
         else{
             echo "<div class='text'>Неправильно введені Логін, або пароль</div>";
         }
-        mysqli_close($dbc);
+
+    }
+    elseif(isset($_SESSION['user_login'], $_SESSION['user_email'], $_SESSION['user_id']) && !empty($_SESSION['user_email']) && !empty($_SESSION['user_email']) && !empty($_SESSION['user_id'])){
+
+    ?>
+    <div class="main">
+        <div class="text">
+            <p>Login - <?=$_SESSION['user_login']?></p>
+            <p>E-mail - <?=$_SESSION['user_email']?></p>
+            <p>Back - <a href="index.php">Click</a></p>
+            <p>Sign Out - <a href="exit.php">Click</a></p>
+        </div>
+    </div>
+    <?php
+
+
     }
     else{
         echo "<div class='text'>Сталася помилка. <a href='logSign.php'>Back</a></div>";
     }
-
+mysqli_close($dbc);
 ?>
 </body>
 </html>
