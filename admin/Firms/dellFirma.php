@@ -9,7 +9,30 @@
 </head>
 <body>
 <?php
+    if (isset($_GET['id'], $_GET['firma']) && !empty($_GET['id']) && !empty($_GET['firma'])){
+?>
+    <form action="dellFirma.php" method="post">
+        <h1>Ви дійсно Бажаєте видалити Фірму <?=$_GET['firma']?> з БД?</h1>
+        <input type="radio" name="dell" value="Yes">Yes
+        <input type="radio" name="dell" value="No">No
+        <input type="submit" name="send" value="Видалити">
+        <input type="hidden" name="id" value="<?=$_GET['id']?>">
+    </form>
+<?php
+    }
+    elseif(isset($_POST['dell'], $_POST['send'], $_POST['id']) && !empty($_POST['dell']) && !empty($_POST['id']) && $_POST['dell'] == 'Yes'){
 
+        require_once('../param.php');
+
+        $query = "delete from Firms where id = {$_POST['id']}";
+        mysqli_query($dbc, $query) or die("Query Error");
+
+       echo "Фірма успішно видалена з категорії. Назад до списку: <a href='firmControl.php'>Click</a>";
+
+    }
+    else{
+        echo "Видалення не вдалося, спробуйте ще раз: <a href='firmControl.php'>Click</a>";
+    }
 
 ?>
 </body>
