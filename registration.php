@@ -9,18 +9,21 @@
 </head>
 <body>
 <?php
-    if (!isset($_POST['send'])){
-?>
-    <form action="registration.php" method="post">
-        <h3>Registration</h3>
-        <input type="text" name="firstName" placeholder="Firs Name"><br>
-        <input type="text" name="surname" placeholder="Surname"><br>
-        <input type="email" name="email" placeholder="Example@gmail.com">
-        <input type="password" name="pass">
-        <button type="submit" name="send" >Registration</button>
-    </form>
-<?php
-    }
+if (isset($_POST['SingUp'], $_POST['login'], $_POST['email'], $_POST['password']) && !empty($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password']) && $_POST['password'] == $_POST['rePassword']){
+
+    require_once("admin/param.php");
+
+    $query = "insert into users (login, email, password) values ('{$_POST['login']}', '{$_POST['email']}', sha1('{$_POST['password']}'))";
+
+    mysqli_query($dbc, $query) or die ("Query Error");
+
+    echo "Ваш аккаунт успішно створений. <a href='LogSing.php'><button>Log in</button></a>";
+
+    mysqli_close($dbc);
+}
+else{
+    echo "Дані введено не правильно";
+}
 ?>
 </body>
 </html>

@@ -1,0 +1,18 @@
+html, .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #5b59a9, #a5a5c0);
+    min-height: 100vh;
+}
+
+.main img {
+    margin-right: 20px;
+    border-radius: 25px;
+}
+
+.text {
+    text-align: left;
+}
+
