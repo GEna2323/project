@@ -1,0 +1,21 @@
+html, .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom,#2810f1, #6e64e7, #87a8f3);
+    min-height: 100vh;
+}
+
+.main img {
+    margin-right: 20px;
+    border-radius: 25px;
+}
+.main {
+
+}
+
+.text {
+    text-align: left;
+}
+
