@@ -13,13 +13,23 @@ if (isset($_POST['SingUp'], $_POST['login'], $_POST['email'], $_POST['password']
 
     require_once("admin/param.php");
 
-    $query = "insert into users (login, email, password) values ('{$_POST['login']}', '{$_POST['email']}', sha1('{$_POST['password']}'))";
+    $queryTest = "select id from users where login = '{$_POST['login']}'";
+    $resultTest = mysqli_query($dbc, $queryTest) or die("Query Error");
+    $countUser = mysqli_num_rows($resultTest);
 
-    mysqli_query($dbc, $query) or die ("Query Error");
+    if ($countUser > 0){
+        echo "Акаунт з таким Логіном вже створений, оберіть інше ім'я. Назад <a href='logSign.php'>Click</a>";
+    }
+    else{
+        $query = "insert into users (login, email, password) values ('{$_POST['login']}', '{$_POST['email']}', sha1('{$_POST['password']}'))";
 
-    echo "Ваш аккаунт успішно створений. <a href='LogSing.php'><button>Log in</button></a>";
+        mysqli_query($dbc, $query) or die ("Query Error");
+
+        echo "Ваш аккаунт успішно створений. <a href='LogSing.php'><button>Log in</button></a>";
+    }
 
     mysqli_close($dbc);
+
 }
 else{
     echo "Дані введено не правильно";
