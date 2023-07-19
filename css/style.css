@@ -193,7 +193,6 @@ body {
 }
 .page__logo {
     object-position: right;
-    opacity: 0.6;
 }
 
 .page__button:hover{
