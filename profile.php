@@ -37,6 +37,7 @@ require_once("admin/param.php");
                 <p>Login - <?=$row['login']?></p>
                 <p>E-mail - <?=$row['email']?></p>
                 <p>Back - <a href="index.php">Click</a></p>
+                <p>DB Control - <a href="admin/dataBaseControl.php">Click</a></p>
                 <p>Sign Out - <a href="exit.php">Click</a></p>
             </div>
         </div>
@@ -55,6 +56,7 @@ require_once("admin/param.php");
             <p>Login - <?=$_SESSION['user_login']?></p>
             <p>E-mail - <?=$_SESSION['user_email']?></p>
             <p>Back - <a href="index.php">Click</a></p>
+            <p>Add Catalog - <a href="admin/Catalog/addCatalog.php">Click</a></p>
             <p>Sign Out - <a href="exit.php">Click</a></p>
         </div>
     </div>

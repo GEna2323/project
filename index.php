@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,7 @@ session_start();
     <title>Project</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,regular,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 <body>
 <div class="wrapper">
@@ -21,7 +22,7 @@ session_start();
             <nav class="header__menu menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <a href="vivod.php" class="menu__href">Vivod.php</a>
+                        <a href="vivod.php" class="menu__href">Occasions</a>
                     </li>
                     <li class="menu__item">
                         <a href="" class="menu__href">All Categories</a>
@@ -55,17 +56,17 @@ session_start();
                     </a>
                     <?php
                     if (isset($_SESSION['user_login'], $_SESSION['user_email'], $_SESSION['user_id']) && !empty($_SESSION['user_email']) && !empty($_SESSION['user_email']) && !empty($_SESSION['user_id'])){
-                    ?>
-                    <a href="profile.php"  class="icon__img">
-                        <img src="img/menu/02.svg" alt="user">
-                    </a>
-                    <?php
+                        ?>
+                        <a href="profile.php"  class="icon__img">
+                            <img src="img/menu/02.svg" alt="user">
+                        </a>
+                        <?php
                     }else{
-                    ?>
-                    <a href="logSign.php"  class="icon__img">
-                        <img src="img/menu/02.svg" alt="user">
-                    </a>
-                    <?php
+                        ?>
+                        <a href="logSign.php"  class="icon__img">
+                            <img src="img/menu/02.svg" alt="user">
+                        </a>
+                        <?php
                     }
                     ?>
                     <a href=""  class="icon__img">
@@ -87,15 +88,103 @@ session_start();
                 </div>
             </div>
             <div class="page__logo _ibg">
-                <img src="img/big logo/01.jpg" alt="cover">
+                <img src="img/big logo/1.jpg" alt="cover">
             </div>
         </section>
+        <div class="main__slider slider">
+            <div class="slider__container _container">
+                <h1 class="slider__text">New Phones</h1>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/slider/01.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/slider/02.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/slider/03.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/slider/04.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/slider/05.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main__companies companies">
+            <div class="companies__body">
+                <a href="" class="company">
+                    <img src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/apple.jpg" alt="">
+                </a>
+                <a href="" class="company">
+                    <img src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/samsung.jpg" alt="">
+                </a>
+                <a href="" class="company">
+                    <img _ngcontent-rz-client-c170="" loading="lazy" class="  ng-lazyloaded" src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/xiaomi.jpg"></a>
+                </a>
+                <a href="" class="company">
+                    <img src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/sony.jpg" alt="">
+                </a>
+                <a href="" class="company">
+                    <img src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/nokia.jpg" alt="">
+                </a>
+                <a href="" class="company">
+                    <img src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/huawei.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="main__catalog catalog">
+            <div class="catalog__container _container">
+                <?php
+                //include("list.php");
+                require_once("admin/param.php");
+
+                $queryCat = "select id, id_firms, model, price, count, photo from catalog";
+
+                $resultCat = mysqli_query($dbc, $queryCat) or die("Query Error");
+
+                $countCat = mysqli_num_rows($resultCat);
+
+                while($row = mysqli_fetch_array($resultCat)){
+                ?>
+
+                <div class="catalog__block block">
+                    <div class="catalog__body">
+                        <a href="" class="block__img">
+                            <img src="img/catalog/<?=$row['photo']?>" alt="phone">
+                        </a>
+
+                        <div class="block__body">
+                            <h2 class="body__title">Мобільний телефон <?=$row['model']?></h2>
+                            <div class="body__price">
+                                <div class="price__number"><?=$row['price']?>></div>
+                                <a href="">
+                                    <button class="price__button">Придбати</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+                }
+
+                ?>
+
+            </div>
+        </div>
     </main>
     <footer class="footer">
-
     </footer>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="js/js.js"></script>
 </body>
 
 </html>
