@@ -31,7 +31,7 @@ html,
 body {
 	height: 100%;
 	line-height: 1;
-	background: #87a8f3;
+	background: #dce6fd;
 	font-size: 15px;
 	color: #252b42;
 	font-weight: 500;
@@ -76,6 +76,7 @@ body {
 .menu__list {
     min-width: 760px;
     display: flex;
+    align-items: center;
 }
 .menu__item:not(:last-child) {    
     margin-right: 55px;
@@ -166,7 +167,6 @@ body {
     width: 200px;
     height: 45px;
     flex-shrink: 0;
-    flex-shrink: 0;
     border-radius: 5px;
     background: #FF8126;
     margin-top: 430px;
@@ -184,7 +184,7 @@ body {
     position: relative;
 }
 ._ibg img{
-    margin-top: 140px;
+    margin-top: 135px;
 	width: 100%;
     max-height: 600px;
 	top: 0;
@@ -211,23 +211,21 @@ body {
 }
 .slider__text {
     text-align: center;
-    color: #ffffff;
+    color: #000000;
     font-size: 36px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     padding: 0px 5px;
 }
-/*  */
-.main__companies {
-}
+/* ----companies--------------------------------------------- */
 .companies__body {
     background-color: #FFF;
     margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 100px;
 }
 .company:not(:last-child) {
     border-right: 1px solid #e9e9e9;
@@ -235,4 +233,67 @@ body {
 .company {
     padding-left: 8px;
     padding-right: 8px;
+}
+/* --------CATALOG---------------------------------------------------- */
+.catalog__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    background-color: #FFF;
+    padding-top: 30px;
+}
+.catalog__block {
+    margin-top: 20px;
+    max-width: 260px;
+    border: 1px solid #e9e9e9;
+}
+.catalog__body {
+    margin: 30px 20px;
+}
+.block__img {
+    display: flex;
+    height: 100%;
+}
+.block__img img{
+   height: 280px;
+}
+.block__body {
+    margin-top: 10px;
+}
+.body__title {
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.body__price {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.price__number {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: crimson;
+}
+.price__button {
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: #b2c8fa;
+    width: 120px;
+    height: 35px;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+    line-height: normal;
+}
+.price__button:hover {
+    background-color: #6e9aff;
 }
