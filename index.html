@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,regular,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="wrapper">
@@ -52,9 +52,21 @@
                         <a href="" class="icon__img">
                             <img src="img/menu/01.svg" alt="loupe">
                         </a>
+                        <?php
+                    if (isset($_SESSION['user_login'], $_SESSION['user_email'], $_SESSION['user_id']) && !empty($_SESSION['user_email']) && !empty($_SESSION['user_email']) && !empty($_SESSION['user_id'])){
+                        ?>
+                        <a href="profile.php"  class="icon__img">
+                            <img src="img/menu/02.svg" alt="user">
+                        </a>
+                        <?php
+                    }else{
+                        ?>
                         <a href="logSign.php"  class="icon__img">
                             <img src="img/menu/02.svg" alt="user">
                         </a>
+                        <?php
+                    }
+                    ?>
                         <a href=""  class="icon__img">
                             <img src="img/menu/03.svg" alt="shopping-cart">
                         </a>
@@ -128,15 +140,29 @@
             </div>
             <div class="main__catalog catalog">
                 <div class="catalog__container _container">
+                    <?php
+                //include("list.php");
+                require_once("admin/param.php");
+
+                $queryCat = "select id, id_firms, model, price, count, photo from catalog";
+
+                $resultCat = mysqli_query($dbc, $queryCat) or die("Query Error");
+
+                $countCat = mysqli_num_rows($resultCat);
+
+                while($row = mysqli_fetch_array($resultCat)){
+                ?>
+
                     <div class="catalog__block block">
                         <div class="catalog__body">
                             <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
+                                <img src="img/catalog/<?=$row['photo']?>" alt="phone">
                             </a>
+
                             <div class="block__body">
-                                <h2 class="body__title"></h2>
+                                <h2 class="body__title">Мобільний телефон <?=$row['model']?></h2>
                                 <div class="body__price">
-                                    <div class="price__number">1000 $</div>
+                                    <div class="price__number"><?=$row['price']?>></div>
                                     <a href="">
                                         <button class="price__button">Придбати</button>
                                     </a>
@@ -144,244 +170,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <button class="price__button">Придбати</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/01.webp" alt="phone">
-                            </a>
-                            <div class="block__body">
-                                <h2 class="body__title">Телефон звичайний шось там</h2>
-                                <div class="body__price">
-                                    <div class="price__number">1000 $</div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?php
+                }
+
+                ?>
                 </div>
             </div>
         </main>
@@ -430,7 +223,7 @@
                                     <li class="menu-footer__item"><a href="" class="menu-footer__link">Cooperation with us</a></li>
                                     <li class="menu-footer__item"><a href="" class="menu-footer__link">Franchising</a></li>
                                     <li class="menu-footer__item"><a href="" class="menu-footer__link">Rent of premises</a></li>
-                                </ul>   
+                                </ul>
                             </nav>
                         </div>
                     </div>

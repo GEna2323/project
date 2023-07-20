@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,regular,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="wrapper">
@@ -77,6 +78,7 @@
         </div>
     </header>
     <main class="main">
+        <a id="button"></a>
         <section class="mail__page">
             <div class="page__container _container">
                 <div class="page__body">
@@ -152,39 +154,124 @@
                 $countCat = mysqli_num_rows($resultCat);
 
                 while($row = mysqli_fetch_array($resultCat)){
-                ?>
+                    ?>
 
-                <div class="catalog__block block">
-                    <div class="catalog__body">
-                        <a href="" class="block__img">
-                            <img src="img/catalog/<?=$row['photo']?>" alt="phone">
-                        </a>
+                    <div class="catalog__block block">
+                        <div class="catalog__body">
+                            <a href="" class="block__img">
+                                <img src="img/catalog/<?=$row['photo']?>" alt="phone">
+                            </a>
 
-                        <div class="block__body">
-                            <h2 class="body__title">Мобільний телефон <?=$row['model']?></h2>
-                            <div class="body__price">
-                                <div class="price__number"><?=$row['price']?>></div>
-                                <a href="">
-                                    <button class="price__button">Придбати</button>
-                                </a>
+                            <div class="block__body">
+                                <h2 class="body__title">Мобільний телефон <?=$row['model']?></h2>
+                                <div class="body__price">
+                                    <div class="price__number"><?=$row['price']?>></div>
+                                    <a href="">
+                                        <button class="price__button">Придбати</button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <?php
+                    <?php
                 }
 
                 ?>
-
             </div>
         </div>
     </main>
     <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__main _container">
+                <div class="foter__row">
+                    <div class="footer__column">
+                        <div class="footer__label">Company Info</div>
+                        <nav class="footer__menu menu-footer">
+                            <ul class="footer__list">
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">About Us</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Carrier</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">We are hiring</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer__column">
+                        <div class="footer__label">Help</div>
+                        <nav class="footer__menu menu-footer">
+                            <ul class="footer__list">
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Delivery and payment</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Credit</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Guarantee</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Return of goods</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer__column">
+                        <div class="footer__label">Services</div>
+                        <nav class="footer__menu menu-footer">
+                            <ul class="footer__list">
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Bonus account</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Rosetka Premium</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Gift certificates</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Rozetka Exchange</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer__column">
+                        <div class="footer__label">Partners</div>
+                        <nav class="footer__menu menu-footer">
+                            <ul class="menu-footer__list">
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Sell on G&V Shop</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Cooperation with us</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Franchising</a></li>
+                                <li class="menu-footer__item"><a href="" class="menu-footer__link">Rent of premises</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__container _container">
+                <div class="footer__copy">Made With Love By Figmaland All Right Reserved </div>
+                <div class="footer__social social">
+                    <a href="" class="social__item">
+                        <img src="img/footer/social/01.svg" alt="social">
+                    </a>
+                    <a href="" class="social__item">
+                        <img src="img/footer/social/02.svg" alt="social">
+                    </a>
+                    <a href="" class="social__item">
+                        <img src="img/footer/social/03.svg" alt="social">
+                    </a>
+                    <a href="" class="social__item">
+                        <img src="img/footer/social/04.svg" alt="social">
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="js/js.js"></script>
+<script>
+    jQuery(document).ready(function () {
+        var btn = jQuery('#button');
+        jQuery(window).scroll(function () {
+            if (jQuery(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+        btn.on('click', function (e) {
+            e.preventDefault();
+            jQuery('html, body').animate({ scrollTop: 0 }, '300');
+        });
+    });
+</script>
 </body>
 
 </html>
