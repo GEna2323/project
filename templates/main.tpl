@@ -128,40 +128,24 @@
         </div>
         <div class="main__catalog catalog">
             <div class="catalog__container _container">
-                <?php
-                //include("list.php");
-                require_once("admin/param.php");
-
-                $queryCat = "select id, id_firms, model, price, count, photo from catalog";
-
-                $resultCat = mysqli_query($dbc, $queryCat) or die("Query Error");
-
-                $countCat = mysqli_num_rows($resultCat);
-
-                while($row = mysqli_fetch_array($resultCat)){
-                    ?>
-
-                    <div class="catalog__block block">
-                        <div class="catalog__body">
-                            <a href="" class="block__img">
-                                <img src="img/catalog/<?=$row['photo']?>" alt="phone">
-                            </a>
-
-                            <div class="block__body">
-                                <h2 class="body__title">Мобільний телефон <?=$row['model']?></h2>
-                                <div class="body__price">
-                                    <div class="price__number"><?=$row['price']?>></div>
-                                    <a href="">
-                                        <button class="price__button">Придбати</button>
-                                    </a>
-                                </div>
+                {section loop = $catalog name = k}
+                <div class="catalog__block block">
+                    <div class="catalog__body">
+                        <a href="" class="block__img">
+                            <img src="img/catalog/{$catalog[k].photo}" alt="phone">
+                        </a>
+                        <div class="block__body">
+                            <h2 class="body__title">Мобільний телефон {$catalog[k].model}</h2>
+                            <div class="body__price">
+                                <div class="price__number">{$catalog[k].price}</div>
+                                <a href="">
+                                    <button class="price__button">Придбати</button>
+                                </a>
                             </div>
                         </div>
                     </div>
-
-                    <?php
-                }
-                ?>
+                </div>
+                {/section}
             </div>
         </div>
     </main>
