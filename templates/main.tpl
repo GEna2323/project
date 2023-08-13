@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title>{$metaTitle}</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,regular,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta name="description" content="{$metaDiscription}">
+    <meta name="keywords" content="={$metaKeyWords}">
 </head>
 <body>
 <div class="wrapper">
@@ -19,21 +21,26 @@
             </a>
             <nav class="header__menu menu">
                 <ul class="menu__list">
-                    <li class="menu__item">
-                        <a href="vivod.php" class="menu__href">Occasions</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">All Categories</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">Gifts & Bundles </a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">Our Brands</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">About Us </a>
-                    </li>
+                    {section loop = $menu name = k}
+                        <li class="menu__item">
+                            <a href="{$menu[k].page}.php" class="menu__href">{$menu[k].name}</a>
+                        </li>
+                    {/section}
+{*                    <li class="menu__item">*}
+{*                        <a href="vivod.php" class="menu__href">Occasions</a>*}
+{*                    </li>*}
+{*                    <li class="menu__item">*}
+{*                        <a href="" class="menu__href">All Categories</a>*}
+{*                    </li>*}
+{*                    <li class="menu__item">*}
+{*                        <a href="" class="menu__href">Gifts & Bundles </a>*}
+{*                    </li>*}
+{*                    <li class="menu__item">*}
+{*                        <a href="" class="menu__href">Our Brands</a>*}
+{*                    </li>*}
+{*                    <li class="menu__item">*}
+{*                        <a href="" class="menu__href">About Us </a>*}
+{*                    </li>*}
                 </ul>
             </nav>
             <div class="menu__i">
@@ -128,16 +135,15 @@
         </div>
         <div class="main__catalog catalog">
             <div class="catalog__container _container">
-                {section loop = $catalog name = k}
                 <div class="catalog__block block">
                     <div class="catalog__body">
                         <a href="" class="block__img">
-                            <img src="img/catalog/{$catalog[k].photo}" alt="phone">
+                            <img src="" alt="phone">
                         </a>
                         <div class="block__body">
-                            <h2 class="body__title">Мобільний телефон {$catalog[k].model}</h2>
+                            <h2 class="body__title">Мобільний телефон XXX</h2>
                             <div class="body__price">
-                                <div class="price__number">{$catalog[k].price}</div>
+                                <div class="price__number">XXX</div>
                                 <a href="">
                                     <button class="price__button">Придбати</button>
                                 </a>
@@ -145,7 +151,6 @@
                         </div>
                     </div>
                 </div>
-                {/section}
             </div>
         </div>
     </main>

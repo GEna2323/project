@@ -1,24 +1,43 @@
 <?php
 
-    require_once('header.php');
 
-    $queryCat = "select id, id_firms, model, price, count, photo from catalog";
+    if (isset($page)) {
 
-    $resultCat = mysqli_query($dbc, $queryCat) or die("Query Error");
+        $query = "select metaTitle, metaDiscription, metaKeyWords, title, fullContent from settingPage where page = '$page'";
 
-    $catalog = [];
+        $result = mysqli_query($dbc, $query) or die("Query Error");
 
-    while($row = mysqli_fetch_array($resultCat)){
+        $row = mysqli_fetch_array($result);
 
-        $catalog[] = ['model'=>$row['model'], 'photo'=>$row['photo'], 'price'=>$row['price']];
+        $smarty_main -> assign('metaTitle', $row['metaTitle']);
+        $smarty_main -> assign('metaDiscription', $row['metaDiscription']);
+        $smarty_main -> assign('metaKeyWords', $row['metaKeyWords']);
+        $smarty_main -> assign('title', $row['title']);
+        $smarty_main -> assign('fullContent', $row['fullContent']);
+
+
+        /* Меню */
+
+        $query_menu = "select name, page from settingPage order by prior asc";
+
+        $result_menu = mysqli_query($dbc, $query_menu) or die("Query_Menu Error");
+
+        $menu = [];
+
+        while($row_menu = mysqli_fetch_array($result_menu)){
+
+            $menu[] = ['name'=>$row_menu['name'], 'page'=>$row_menu['page']];
+
+        }
+
+        $smarty_main -> assign('menu', $menu);
+
+
+
+        mysqli_close($dbc);
+        $smarty_main -> display('main.tpl');
 
     }
-
-
-
-
-
-    $smarty_main -> assign('catalog', $catalog);
-
-    mysqli_close($dbc);
-    $smarty_main -> display('main.tpl');
+    else{
+        header('location:admin/404/404page.html');
+    }

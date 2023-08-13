@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-07 21:03:45
+/* Smarty version 4.3.2, created on 2023-08-13 19:41:43
   from 'D:\OSPanel\domains\project\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64d13201453aa2_47648985',
+  'unifunc' => 'content_64d907c7306291_64914368',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0e41561d823c228502dec39c7a98719cb20bf81' => 
     array (
       0 => 'D:\\OSPanel\\domains\\project\\templates\\main.tpl',
-      1 => 1691431424,
+      1 => 1691944900,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d13201453aa2_47648985 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64d907c7306291_64914368 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['metaTitle']->value;?>
+</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,regular,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta name="description" content="<?php echo $_smarty_tpl->tpl_vars['metaDiscription']->value;?>
+">
+    <meta name="keywords" content="=<?php echo $_smarty_tpl->tpl_vars['metaKeyWords']->value;?>
+">
 </head>
 <body>
 <div class="wrapper">
@@ -42,21 +47,22 @@ function content_64d13201453aa2_47648985 (Smarty_Internal_Template $_smarty_tpl)
             </a>
             <nav class="header__menu menu">
                 <ul class="menu__list">
-                    <li class="menu__item">
-                        <a href="vivod.php" class="menu__href">Occasions</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">All Categories</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">Gifts & Bundles </a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">Our Brands</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__href">About Us </a>
-                    </li>
+                    <?php
+$__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['menu']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_k_0_total = $__section_k_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
+if ($__section_k_0_total !== 0) {
+for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
+?>
+                        <li class="menu__item">
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['page'];?>
+.php" class="menu__href"><?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['name'];?>
+</a>
+                        </li>
+                    <?php
+}
+}
+?>
                 </ul>
             </nav>
             <div class="menu__i">
@@ -151,25 +157,15 @@ function content_64d13201453aa2_47648985 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <div class="main__catalog catalog">
             <div class="catalog__container _container">
-                <?php
-$__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['catalog']->value) ? count($_loop) : max(0, (int) $_loop));
-$__section_k_0_total = $__section_k_0_loop;
-$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
-if ($__section_k_0_total !== 0) {
-for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
-?>
                 <div class="catalog__block block">
                     <div class="catalog__body">
                         <a href="" class="block__img">
-                            <img src="img/catalog/<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['photo'];?>
-" alt="phone">
+                            <img src="" alt="phone">
                         </a>
                         <div class="block__body">
-                            <h2 class="body__title">Мобільний телефон <?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['model'];?>
-</h2>
+                            <h2 class="body__title">Мобільний телефон XXX</h2>
                             <div class="body__price">
-                                <div class="price__number"><?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['price'];?>
-</div>
+                                <div class="price__number">XXX</div>
                                 <a href="">
                                     <button class="price__button">Придбати</button>
                                 </a>
@@ -177,10 +173,6 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                         </div>
                     </div>
                 </div>
-                <?php
-}
-}
-?>
             </div>
         </div>
     </main>
