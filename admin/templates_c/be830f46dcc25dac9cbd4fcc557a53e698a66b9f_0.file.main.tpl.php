@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.3.2, created on 2023-08-15 19:15:40
+  from 'D:\OSPanel\domains\project\admin\templates\main.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.2',
+  'unifunc' => 'content_64dba4acd63e96_51621654',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'be830f46dcc25dac9cbd4fcc557a53e698a66b9f' => 
+    array (
+      0 => 'D:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
+      1 => 1691415717,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_64dba4acd63e96_51621654 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,8 +29,12 @@
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"><?php echo '</script'; ?>
+>
     <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
@@ -682,10 +709,12 @@
                 <div class="main-body">
                     <div class="page-wrapper">
 
-                        <h2>{$title}</h2>
+                        <h2><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</h2>
 
                         <div>
-                            {$content}
+                            <?php echo $_smarty_tpl->tpl_vars['content']->value;?>
+
                         </div>
                         <!--
                         <!-- [ Main Content ] start --
@@ -1133,26 +1162,56 @@
 <!-- Warning Section Ends -->
 
 <!-- Required Js -->
-<script src="assets/js/vendor-all.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<?php echo '<script'; ?>
+ src="assets/js/vendor-all.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 
-<script src="assets/js/pcoded.min.js"></script>
+<?php echo '<script'; ?>
+ src="assets/js/pcoded.min.js"><?php echo '</script'; ?>
+>
 <!-- amchart js -->
-<script src="assets/plugins/amchart/js/amcharts.js"></script>
-<script src="assets/plugins/amchart/js/gauge.js"></script>
-<script src="assets/plugins/amchart/js/serial.js"></script>
-<script src="assets/plugins/amchart/js/light.js"></script>
-<script src="assets/plugins/amchart/js/pie.min.js"></script>
-<script src="assets/plugins/amchart/js/ammap.min.js"></script>
-<script src="assets/plugins/amchart/js/usaLow.js"></script>
-<script src="assets/plugins/amchart/js/radar.js"></script>
-<script src="assets/plugins/amchart/js/worldLow.js"></script>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/amcharts.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/gauge.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/serial.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/light.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/pie.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/ammap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/usaLow.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/radar.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/worldLow.js"><?php echo '</script'; ?>
+>
 <!-- notification Js -->
-<script src="assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+<?php echo '<script'; ?>
+ src="assets/plugins/notification/js/bootstrap-growl.min.js"><?php echo '</script'; ?>
+>
 
 <!-- dashboard-custom js -->
-<script src="assets/js/pages/dashboard-custom.js"></script>
+<?php echo '<script'; ?>
+ src="assets/js/pages/dashboard-custom.js"><?php echo '</script'; ?>
+>
 
 </body>
 
 </html>
+<?php }
+}
