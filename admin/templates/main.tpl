@@ -684,7 +684,7 @@
 
                         <h2>{$title}</h2>
 
-                        <div>
+                        <div class="admin-content">
                             {$content}
                         </div>
                         <!--

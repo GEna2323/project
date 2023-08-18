@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-15 19:15:40
+/* Smarty version 4.3.2, created on 2023-08-15 20:04:49
   from 'D:\OSPanel\domains\project\admin\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64dba4acd63e96_51621654',
+  'unifunc' => 'content_64dbb031b428a9_33008812',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be830f46dcc25dac9cbd4fcc557a53e698a66b9f' => 
     array (
       0 => 'D:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
-      1 => 1691415717,
+      1 => 1692118889,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64dba4acd63e96_51621654 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64dbb031b428a9_33008812 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -712,7 +712,7 @@ function content_64dba4acd63e96_51621654 (Smarty_Internal_Template $_smarty_tpl)
                         <h2><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h2>
 
-                        <div>
+                        <div class="admin-content">
                             <?php echo $_smarty_tpl->tpl_vars['content']->value;?>
 
                         </div>

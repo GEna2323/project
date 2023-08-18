@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-13 19:41:43
+/* Smarty version 4.3.2, created on 2023-08-15 19:56:15
   from 'D:\OSPanel\domains\project\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64d907c7306291_64914368',
+  'unifunc' => 'content_64dbae2f6ba316_73071048',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0e41561d823c228502dec39c7a98719cb20bf81' => 
     array (
       0 => 'D:\\OSPanel\\domains\\project\\templates\\main.tpl',
-      1 => 1691944900,
+      1 => 1692118574,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d907c7306291_64914368 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64dbae2f6ba316_73071048 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -63,6 +63,9 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 }
 }
 ?>
+                    <li class="menu__item">
+                        <a href="admin/index.php" class="menu__href">Admin</a>
+                    </li>
                 </ul>
             </nav>
             <div class="menu__i">
