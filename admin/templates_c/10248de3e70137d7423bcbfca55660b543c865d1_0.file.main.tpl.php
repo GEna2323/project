@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-19 00:46:12
+/* Smarty version 4.3.2, created on 2023-08-19 13:32:33
   from 'C:\OSPanel\domains\project\admin\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64dfe6a46c9142_55739283',
+  'unifunc' => 'content_64e09a41de8b11_92000902',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10248de3e70137d7423bcbfca55660b543c865d1' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
-      1 => 1692395172,
+      1 => 1692441150,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64dfe6a46c9142_55739283 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64e09a41de8b11_92000902 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -86,8 +86,8 @@ function content_64dfe6a46c9142_55739283 (Smarty_Internal_Template $_smarty_tpl)
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item pcoded-hasmenu active pcoded-trigger">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Управління категоріями</span></a>
                     <ul class="pcoded-submenu">
-                        <li class="active"><a href="addCategory.php" class="">Додати категорія</a></li>
-                        <li class=""><a href="indexCategory.php" class="">Редагування/Видалення</a></li>
+                        <li class="active"><a href="category_add.php" class="">Додати категорія</a></li>
+                        <li class=""><a href="category_index.php" class="">Редагування/Видалення</a></li>
                         <li class=""><a href="dashboard-crm.html" class="">CRM</a></li>
                         <li class=""><a href="dashboard-analytics.html" class="">Analytics</a></li>
                         <li class=""><a href="dashboard-crypto.html" class="">Crypto<span class="pcoded-badge label label-danger">NEW</span></a></li>

@@ -59,8 +59,8 @@
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item pcoded-hasmenu active pcoded-trigger">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Управління категоріями</span></a>
                     <ul class="pcoded-submenu">
-                        <li class="active"><a href="addCategory.php" class="">Додати категорія</a></li>
-                        <li class=""><a href="indexCategory.php" class="">Редагування/Видалення</a></li>
+                        <li class="active"><a href="category_add.php" class="">Додати категорія</a></li>
+                        <li class=""><a href="category_index.php" class="">Редагування/Видалення</a></li>
                         <li class=""><a href="dashboard-crm.html" class="">CRM</a></li>
                         <li class=""><a href="dashboard-analytics.html" class="">Analytics</a></li>
                         <li class=""><a href="dashboard-crypto.html" class="">Crypto<span class="pcoded-badge label label-danger">NEW</span></a></li>
