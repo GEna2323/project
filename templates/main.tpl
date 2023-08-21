@@ -26,6 +26,9 @@
                             <a href="{$menu[k].page}.php" class="menu__href">{$menu[k].name}</a>
                         </li>
                     {/section}
+                    <li class="menu__item">
+                        <a href="admin/index.php" class="menu__href">Admin</a>
+                    </li>
 {*                    <li class="menu__item">*}
 {*                        <a href="vivod.php" class="menu__href">Occasions</a>*}
 {*                    </li>*}

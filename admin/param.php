@@ -5,4 +5,8 @@
 $dbc = mysqli_connect('localhost','root','','GVShop') or die("Server Error");
 
 
+function Protection ($link, $data){
+    return mysqli_real_escape_string($link, trim($data));
+}
+
 ?>
