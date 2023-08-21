@@ -24,5 +24,7 @@
     <input type="number" name="price" placeholder="Ціна">
     <h3>Опис</h3>
     <textarea name="discription" placeholder="Опис товара"></textarea>
+    <h3>Додати Фото</h3>
+    <input type="file" name="photo[]" multiple><br>
     <input type="submit" name="send" value="Додати">
 </form>

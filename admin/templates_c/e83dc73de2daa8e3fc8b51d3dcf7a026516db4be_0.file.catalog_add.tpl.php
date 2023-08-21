@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-20 16:52:22
+/* Smarty version 4.3.2, created on 2023-08-20 20:02:01
   from 'C:\OSPanel\domains\project\admin\templates\catalog_add.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64e21a96b714e3_12059366',
+  'unifunc' => 'content_64e24709a56729_04313805',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e83dc73de2daa8e3fc8b51d3dcf7a026516db4be' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\catalog_add.tpl',
-      1 => 1692539538,
+      1 => 1692549658,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64e21a96b714e3_12059366 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64e24709a56729_04313805 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action="catalog_add.php" method="post" enctype="multipart/form-data">
     <h3>Фірма</h3>
     <select name="id_firms">
@@ -58,6 +58,8 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
     <input type="number" name="price" placeholder="Ціна">
     <h3>Опис</h3>
     <textarea name="discription" placeholder="Опис товара"></textarea>
+    <h3>Додати Фото</h3>
+    <input type="file" name="photo[]" multiple><br>
     <input type="submit" name="send" value="Додати">
 </form><?php }
 }

@@ -26,6 +26,36 @@
 
         mysqli_query($dbc, $query_add) or die("Query_add Error");
 
+        $product_id = mysqli_insert_id($dbc);
+
+        if (isset($_FILES['photo']['error'][0], $_FILES['photo']['name'][0]) && !empty($_FILES['photo']['error'][0] == 0)){
+            for($i = 0; $i < count($_FILES['photo']['name']); $i++){
+                if (isset($_FILES['photo']['name'][$i]) && $_FILES['photo']['size'][$i] > 0){
+                    $TmpFileName = $_FILES['photo']['tmp_name'][$i];
+                    $realFileName = time().$_FILES['photo']['name'][$i];
+
+                    move_uploaded_file($TmpFileName, "../img/$realFileName");
+
+                    if ($i == 0){
+                        $query_photo = "insert into photo (name, product_id, status) values ('$realFileName', $product_id, 1)";
+                    }
+                    else{
+                        $query_photo = "insert into photo (name, product_id, status) values ('$realFileName', $product_id, 0)";
+                    }
+
+                    mysqli_query($dbc, $query_photo) or die("QueryPhoto Error");
+
+
+
+
+                }
+            }
+        }
+
+
+
+
+
         $content = "Товар успішно додано";
 
 
