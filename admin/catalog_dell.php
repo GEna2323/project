@@ -45,7 +45,7 @@
 
 
 
-$smarty_main -> assign('title', 'Видалення товару');
+    $smarty_main -> assign('title', 'Видалення товару');
     $smarty_main -> assign('content', $content);
 
     mysqli_close($dbc);
