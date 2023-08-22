@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-19 13:32:33
+/* Smarty version 4.3.2, created on 2023-08-22 14:27:51
   from 'C:\OSPanel\domains\project\admin\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64e09a41de8b11_92000902',
+  'unifunc' => 'content_64e49bb7b761c0_95173691',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10248de3e70137d7423bcbfca55660b543c865d1' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
-      1 => 1692441150,
+      1 => 1692703644,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64e09a41de8b11_92000902 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64e49bb7b761c0_95173691 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +54,8 @@ function content_64e09a41de8b11_92000902 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="assets/plugins/notification/css/notification.min.css">
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+
 
 </head>
 
@@ -97,8 +99,8 @@ function content_64e09a41de8b11_92000902 (Smarty_Internal_Template $_smarty_tpl)
                 <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Управління товарами</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="addCatalog.php" class="" >Додати товар</a></li>
-                        <li class=""><a href="indexCatalog.php" class="">Редагування/Видалення</a></li>
+                        <li class=""><a href="catalog_add.php" class="" >Додати товар</a></li>
+                        <li class=""><a href="catalog_index.php" class="">Редагування/Видалення</a></li>
                         <li class="pcoded-hasmenu"><a href="#!" class="">Vertical</a>
                             <ul class="pcoded-submenu">
                                 <li class=""><a href="layout-static.html" class="" target="_blank">Static</a></li>

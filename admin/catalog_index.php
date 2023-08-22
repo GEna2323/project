@@ -4,8 +4,9 @@
 
     $smarty_cat = new Smarty();
 
-    $query_cat = "select id, model, id_firms from catalog";
+    $query_cat = "select catalog.id as catalog_id, model, id_firms, name from catalog left join photo on catalog.id = photo.product_id where status = 1 or photo.status is null";
     $result_cat = mysqli_query($dbc, $query_cat) or die("Query_cat Error");
+
 
 
     $catalog = [];
@@ -13,7 +14,11 @@
     $num = 1;
     while ($row_cat = mysqli_fetch_array($result_cat)){
 
-        $catalog = ['id'=>$row_cat['id'], 'model'=>$row_cat['model'],'id_firms'=>$row_cat['id_firms'], 'num'=>$num];
+        if(empty($row_cat['name'])){
+            $row_cat['name'] = 'noFoto.png';
+        }
+
+        $catalog[] = ['id'=>$row_cat['catalog_id'], 'model'=>$row_cat['model'],'id_firms'=>$row_cat['id_firms'], 'num'=>$num,'photo'=>$row_cat['name']];
         $num++;
 
     }
@@ -22,8 +27,6 @@
     $smarty_cat -> assign('catalog', $catalog);
 
     $content = $smarty_cat -> fetch('catalog_index.tpl');
-
-
 
 
 

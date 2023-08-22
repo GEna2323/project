@@ -28,6 +28,8 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+
+
 </head>
 
 <body>
@@ -70,8 +72,8 @@
                 <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Управління товарами</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="addCatalog.php" class="" >Додати товар</a></li>
-                        <li class=""><a href="indexCatalog.php" class="">Редагування/Видалення</a></li>
+                        <li class=""><a href="catalog_add.php" class="" >Додати товар</a></li>
+                        <li class=""><a href="catalog_index.php" class="">Редагування/Видалення</a></li>
                         <li class="pcoded-hasmenu"><a href="#!" class="">Vertical</a>
                             <ul class="pcoded-submenu">
                                 <li class=""><a href="layout-static.html" class="" target="_blank">Static</a></li>
