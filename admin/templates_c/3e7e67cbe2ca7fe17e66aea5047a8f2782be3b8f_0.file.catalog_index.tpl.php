@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-22 19:43:56
+/* Smarty version 4.3.2, created on 2023-08-25 16:09:03
   from 'C:\OSPanel\domains\project\admin\templates\catalog_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64e4e5ccc06df7_50720388',
+  'unifunc' => 'content_64e8a7ef835155_15135513',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3e7e67cbe2ca7fe17e66aea5047a8f2782be3b8f' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\catalog_index.tpl',
-      1 => 1692722634,
+      1 => 1692968940,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64e4e5ccc06df7_50720388 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64e8a7ef835155_15135513 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action="catalog_index.php" method="get">
     <select name="firms">
         <option value="0">Всі Категорії</option>
@@ -70,8 +70,7 @@ for ($__section_k_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 " width="65px"></td>
                 <td><?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['model'];?>
 </td>
-                <td><a href="catalog_udpate.php?id=<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
-&model=<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['model'];?>
+                <td><a href="catalog_update.php?id=<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
 ">Редагування</a></td>
                 <td><a href="catalog_dell.php?id=<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
 &model=<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['model'];?>
