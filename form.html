@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/form-css.css">
+    <link rel="stylesheet" href="../css/form-css.css">
+
     <title>Form</title>
 </head>
 <body>
-    <form action="">
+<form action="catalog_add.php" method="post" enctype="multipart/form-data">
+    <div class="main__form">
         <div class="form__block">
             <div class="block__name">
                 <h1 class="name__header">
-                    Id
+                    Model
                 </h1>
-                <div class="name__input">   
-                    <input class="input" type="text">
+                <div class="name__input">
+                    <input class="input" type="text" name="model">
+                </div>
+                <div class="optimization__body">
+                    <h1 class="optimization__body_header">
+                        Meta Title
+                    </h1>
+                    <div class="optimization__textarea">
+                        <textarea type="text" cols="21" rows="3" placeholder="Meta_Title"></textarea>
+                    </div>
                 </div>
             </div>
             <div class="block__name name">
@@ -22,15 +32,36 @@
                     Id Firms
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <select name="id_firms" class="option">
+                        <option value="0">Оберіть Фірму</option>
+                        {section loop = $categories name = k}
+                        <option value="{$categories[k].id}">{$categories[k].name}</option>
+                        {/section}
+                    </select>
+                </div>
+                <div class="optimization__body_else">
+                    <h1 class="optimization__body_header">
+                        MetaKeyWords
+                    </h1>
+                    <div class="optimization__textarea">
+                        <textarea type="text" cols="21" rows="3" placeholder="Meta_Key_Words"></textarea>
+                    </div>
                 </div>
             </div>
             <div class="block__name">
                 <h1 class="name__header">
-                    Model
+                    Color
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="text" name="color">
+                </div>
+                <div class="optimization__body">
+                    <h1 class="optimization__body_header">
+                        MetaDiscription
+                    </h1>
+                    <div class="optimization__textarea">
+                        <textarea type="text" cols="21" rows="3" placeholder="Meta_Discription"></textarea>
+                    </div>
                 </div>
             </div>
             <div class="block__name name">
@@ -38,7 +69,7 @@
                     Price
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="text" name="price">
                 </div>
             </div>
             <div class="block__name">
@@ -46,7 +77,7 @@
                     Count
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="text" name="count">
                 </div>
             </div>
             <div class="block__name name">
@@ -54,7 +85,7 @@
                     Ram
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="text" name="ram">
                 </div>
             </div>
             <div class="block__name">
@@ -62,7 +93,7 @@
                     Storage
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="text" name="storage">
                 </div>
             </div>
             <div class="block__name name">
@@ -70,7 +101,7 @@
                     Oc
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="text" name="oc">
                 </div>
             </div>
             <div class="block__name">
@@ -78,31 +109,30 @@
                     Batery
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="text" name="batery">
                 </div>
-            </div>  
+            </div>
             <div class="block__name name">
                 <h1 class="name__header">
-                    Discraption
+                    Discription
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <textarea name="discription" cols="21" rows="3" placeholder="Опис"></textarea>
                 </div>
-            </div> 
+            </div>
             <div class="block__name">
                 <h1 class="name__header">
-                    Color
+                    Photo
                 </h1>
                 <div class="name__input">
-                    <input class="input" type="text">
+                    <input class="input" type="file" name="photo[]" multiple>
                 </div>
-            </div> 
+            </div>
             <div class="form__button">
-                <a href="" >
-                    <input type="submit" name="send" value="CONFIRM" class="button">
-                </a>
+                <input type="submit" name="send" value="CONFIRM" class="button">
             </div>
         </div>
-    </form>
+</div>
+</form>
 </body>
 </html>
