@@ -57,9 +57,10 @@ body {
 .name__input {
     margin-left: 60px;
     display: flex;
-    width: 100%;
+    max-width: 170px;
 }
 .input {
+    max-width: 170px;
     border: 1px solid rgb(172, 172, 172);
 }
 /* ----Button-------------------------------- */
@@ -78,4 +79,42 @@ body {
 }
 .button:hover {
     background-color: rgb(214, 155, 67);
+}
+textarea {
+    max-width: 170px;
+    box-shadow: 1px 1px 1px #999;
+    border: 1px solid rgb(172, 172, 172);
+    z-index: 40;
+    max-height: 48px;
+}
+/* ----------------------------------------------- */
+.main__form {
+    
+}
+.ceo__optimization {
+    
+}
+.optimization__header {
+}
+.optimization__list {
+}
+.optimization__body {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    margin-left: 380px;
+    left: 0;
+}
+.optimization__body_else {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    margin-left: 399px;
+    left: 0;
+}
+.optimization__textarea {
+    padding-left: 40px;
+}
+.optimization__textarea_else {
+
 }
