@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-25 18:33:54
+/* Smarty version 4.3.2, created on 2023-08-27 20:13:54
   from 'C:\OSPanel\domains\project\admin\templates\catalog_update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64e8c9e2442d86_20374199',
+  'unifunc' => 'content_64eb84520f0bd0_39768217',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c18a6fbfdb626b8411a368ad31fbf7dc15d77207' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\catalog_update.tpl',
-      1 => 1692977608,
+      1 => 1693156428,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64e8c9e2442d86_20374199 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64eb84520f0bd0_39768217 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,14 +163,16 @@ for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                 <?php if (($_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['status'] == 1)) {?>
                     <img src="../img/<?php echo $_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['photo'];?>
 " width="50px"> - <input  type="radio" name="main_photo" value="<?php echo $_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
-" checked> - <b>Головне Фото</b>
+" checked> - <b>Головне Фото</b> / <a href="photo_dell.php?id=<?php echo $_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">Видалити</a>
                     <input type="hidden" name="old_photo" value="<?php echo $_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                     <br>
                 <?php } else { ?>
                     <img src="../img/<?php echo $_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['photo'];?>
 " width="50px"> - <input type="radio" name="main_photo" value="<?php echo $_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
-"> - Обрати головним
+"> - Обрати головним / <a href="photo_dell.php?id=<?php echo $_smarty_tpl->tpl_vars['photo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">Видалити</a>
                     <br>
                 <?php }?>
             <?php

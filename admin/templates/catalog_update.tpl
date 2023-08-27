@@ -110,11 +110,11 @@
             <h3>Фото:</h3>
             {section loop = $photo name = i}
                 {if ($photo[i].status == 1)}
-                    <img src="../img/{$photo[i].photo}" width="50px"> - <input  type="radio" name="main_photo" value="{$photo[i].id}" checked> - <b>Головне Фото</b>
+                    <img src="../img/{$photo[i].photo}" width="50px"> - <input  type="radio" name="main_photo" value="{$photo[i].id}" checked> - <b>Головне Фото</b> / <a href="photo_dell.php?id={$photo[i].id}">Видалити</a>
                     <input type="hidden" name="old_photo" value="{$photo[i].id}">
                     <br>
                 {else}
-                    <img src="../img/{$photo[i].photo}" width="50px"> - <input type="radio" name="main_photo" value="{$photo[i].id}"> - Обрати головним
+                    <img src="../img/{$photo[i].photo}" width="50px"> - <input type="radio" name="main_photo" value="{$photo[i].id}"> - Обрати головним / <a href="photo_dell.php?id={$photo[i].id}">Видалити</a>
                     <br>
                 {/if}
             {/section}
