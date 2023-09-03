@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-22 14:27:51
+/* Smarty version 4.3.2, created on 2023-09-04 00:10:36
   from 'C:\OSPanel\domains\project\admin\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64e49bb7b761c0_95173691',
+  'unifunc' => 'content_64f4f64c8bb128_79536723',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10248de3e70137d7423bcbfca55660b543c865d1' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
-      1 => 1692703644,
+      1 => 1693775434,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64e49bb7b761c0_95173691 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64f4f64c8bb128_79536723 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -465,11 +465,17 @@ function content_64e49bb7b761c0_95173691 (Smarty_Internal_Template $_smarty_tpl)
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <img src="assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
-                            <span>John Doe</span>
-                            <a href="auth-signin.html" class="dud-logout" title="Logout">
-                                <i class="feather icon-log-out"></i>
-                            </a>
+                            <?php if (((isset($_smarty_tpl->tpl_vars['user_name']->value)))) {?>
+                            <img src="img/<?php echo $_smarty_tpl->tpl_vars['user_photo']->value;?>
+" class="img-radius" alt="User-Profile-Image">
+                                <span><?php echo $_smarty_tpl->tpl_vars['user_name']->value;?>
+</span>
+                                <a href="exit.php" class="dud-logout" title="Logout">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                                <?php } else { ?>
+                                <span>Увійдіть в Аккаунт</span>
+                            <?php }?>
                         </div>
                         <ul class="pro-body">
                             <li><a href="#!" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>

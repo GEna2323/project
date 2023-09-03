@@ -438,11 +438,15 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <img src="assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
-                            <span>John Doe</span>
-                            <a href="auth-signin.html" class="dud-logout" title="Logout">
-                                <i class="feather icon-log-out"></i>
-                            </a>
+                            {if (isset($user_name))}
+                            <img src="img/{$user_photo}" class="img-radius" alt="User-Profile-Image">
+                                <span>{$user_name}</span>
+                                <a href="exit.php" class="dud-logout" title="Logout">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                                {else}
+                                <span>Увійдіть в Аккаунт</span>
+                            {/if}
                         </div>
                         <ul class="pro-body">
                             <li><a href="#!" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>
