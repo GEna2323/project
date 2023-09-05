@@ -42,6 +42,9 @@ if (!isset($_POST['send'])) {
                 $_SESSION['user_role'] = $row['role'];
                 $_SESSION['user_photo'] = $row['photo'];
 
+                $query_time = "update user set dataTime=now() where id = {$row['id']}";
+                mysqli_query($dbc, $query_time) or die("Query Time Error");
+
 
                 $content = "Ви успішно увійшли в аккаунт";
 

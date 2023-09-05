@@ -55,18 +55,20 @@
         </div>
         <div class="navbar-content scroll-div">
             <ul class="nav pcoded-inner-navbar">
+                {if (isset($user_role) && !empty($user_role))}
                 <li class="nav-item pcoded-menu-caption">
                     <label>Navigation</label>
                 </li>
+
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item pcoded-hasmenu active pcoded-trigger">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Управління категоріями</span></a>
                     <ul class="pcoded-submenu">
                         <li class="active"><a href="category_add.php" class="">Додати категорія</a></li>
                         <li class=""><a href="category_index.php" class="">Редагування/Видалення</a></li>
-                        <li class=""><a href="dashboard-crm.html" class="">CRM</a></li>
+                        {* <li class=""><a href="dashboard-crm.html" class="">CRM</a></li>
                         <li class=""><a href="dashboard-analytics.html" class="">Analytics</a></li>
                         <li class=""><a href="dashboard-crypto.html" class="">Crypto<span class="pcoded-badge label label-danger">NEW</span></a></li>
-                        <li class=""><a href="dashboard-project.html" class="">Project</a></li>
+                        <li class=""><a href="dashboard-project.html" class="">Project</a></li> *}
                     </ul>
                 </li>
                 <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
@@ -74,7 +76,7 @@
                     <ul class="pcoded-submenu">
                         <li class=""><a href="catalog_add.php" class="" >Додати товар</a></li>
                         <li class=""><a href="catalog_index.php" class="">Редагування/Видалення</a></li>
-                        <li class="pcoded-hasmenu"><a href="#!" class="">Vertical</a>
+                        {*<li class="pcoded-hasmenu"><a href="#!" class="">Vertical</a>
                             <ul class="pcoded-submenu">
                                 <li class=""><a href="layout-static.html" class="" target="_blank">Static</a></li>
                                 <li class=""><a href="layout-fixed.html" class="" target="_blank">Fixed</a></li>
@@ -86,7 +88,7 @@
                         <li class=""><a href="layout-light.html" class="" target="_blank">Light layout</a></li>
                         <li class=""><a href="layout-dark.html" class="" target="_blank">Dark layout <span class="pcoded-badge label label-danger">Hot</span></a></li>
                         <li class=""><a href="layout-menu-icon.html" class="" target="_blank">Color icon</a></li>
-                    </ul>
+                    *}</ul>{*
                 </li>
                 <li data-username="widget Statistic Data Table User card Chart" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layers"></i></span><span class="pcoded-mtext">Widget</span><span class="pcoded-badge label label-info">100+</span></a>
@@ -100,11 +102,15 @@
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>UI Element</label>
-                </li>
+                </li>*}
+                    {if (isset($user_role) && $user_role == 1)}
                 <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Basic</span></a>
+                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Користувачі</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="bc_alert.html" class="">Alert</a></li>
+                        <li class=""><a href="registration.php" class="">Реєстрація</a></li>
+                    </ul>
+                    {/if}
+{*
                         <li class=""><a href="bc_button.html" class="">Button</a></li>
                         <li class=""><a href="bc_badges.html" class="">Badges</a></li>
                         <li class=""><a href="bc_breadcrumb-pagination.html" class="">Breadcrumb & paggination</a></li>
@@ -332,7 +338,12 @@
                 <li data-username="Documentation" class="nav-item"><a href="docs.html" class="nav-link" target="_blank"><span class="pcoded-micon"><i class="feather icon-book"></i></span><span class="pcoded-mtext">Documentation</span></a></li>
                 <li data-username="Need Support" class="nav-item"><a href="https://codedthemes.support-hub.io/" class="nav-link" target="_blank"><span class="pcoded-micon"><i class="feather icon-help-circle"></i></span><span class="pcoded-mtext">Need
                                 support ?</span></a></li>
-            </ul>
+            </ul> *}
+            {else}
+            <li class="nav-item pcoded-menu-caption">
+                <label>Увійдіть, для доступу в адмін частину</label>
+            </li>
+            {/if}
         </div>
     </div>
 </nav>
@@ -449,7 +460,7 @@
                             {/if}
                         </div>
                         <ul class="pro-body">
-                            <li><a href="#!" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>
+                            <li><a href="user_update.php" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>
                             <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
                             <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
                             <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
