@@ -30,7 +30,12 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
 
     session_destroy();
 
-    header("location:login.php");
+    if (isset($_GET['tmp']) && !empty($_GET['tmp'])){
+        header("location:login.php");
+    }
+    else{
+        header("location:../index.php");
+    }
 
 
 }
