@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
 
 }
 else{
-    header("location:404/404page.html");
+    header("location:login.php");
 }
 
 

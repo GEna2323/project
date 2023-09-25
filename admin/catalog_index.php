@@ -15,6 +15,7 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
     }
     else{
         $query_cat = "select catalog.id as catalog_id, model, name from catalog left join photo on catalog.id = photo.product_id where status = 1 or photo.status is null";
+
     }
     $result_cat = mysqli_query($dbc, $query_cat) or die("Query_cat Error");
 
@@ -35,6 +36,8 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
         $num++;
 
     }
+
+
 
     $smarty_cat -> assign('catalog', $catalog);
 

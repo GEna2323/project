@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-05 23:45:27
+/* Smarty version 4.3.2, created on 2023-09-09 16:12:26
   from 'C:\OSPanel\domains\project\admin\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64f79367cd8da1_82015552',
+  'unifunc' => 'content_64fc6f3a01d8c5_07218935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10248de3e70137d7423bcbfca55660b543c865d1' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
-      1 => 1693858552,
+      1 => 1694265143,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64f79367cd8da1_82015552 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64fc6f3a01d8c5_07218935 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -99,14 +99,17 @@ function content_64f79367cd8da1_82015552 (Smarty_Internal_Template $_smarty_tpl)
                     <ul class="pcoded-submenu">
                         <li class=""><a href="catalog_add.php" class="" >Додати товар</a></li>
                         <li class=""><a href="catalog_index.php" class="">Редагування/Видалення</a></li>
-                        </ul>                    <?php if (((isset($_smarty_tpl->tpl_vars['user_role']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 1)) {?>
+                        </ul>
+                </li>                    <?php if (((isset($_smarty_tpl->tpl_vars['user_role']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 1)) {?>
                 <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Користувачі</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="registration.php" class="">Реєстрація</a></li>
                     </ul>
+                </li>
                     <?php }?>
-            <?php } else { ?>
+
+                                <?php } else { ?>
             <li class="nav-item pcoded-menu-caption">
                 <label>Увійдіть, для доступу в адмін частину</label>
             </li>
@@ -232,7 +235,7 @@ function content_64f79367cd8da1_82015552 (Smarty_Internal_Template $_smarty_tpl)
                             <li><a href="user_update.php" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>
                             <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
                             <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
-                            <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            <li><a href="../index.php" class="dropdown-item"><i class="feather icon-lock"></i> Back</a></li>
                         </ul>
                     </div>
                 </div>

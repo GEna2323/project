@@ -2,7 +2,7 @@
     <select name="firms">
         <option value="0">Всі Категорії</option>
         {section loop = $firms name = i}
-            {if ($newFirma == $firms[i].id_firm)}
+            {if ( isset($newFirma) && $newFirma == $firms[i].id_firm)}
                 <option value="{$firms[i].id_firm}" selected>{$firms[i].firma}</option>
                 {else}
                 <option value="{$firms[i].id_firm}">{$firms[i].firma}</option>

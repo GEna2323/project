@@ -74,7 +74,7 @@
     </header>
     <main class="main">
         <a id="button"></a>
-        <section class="mail__page">
+        <!-- <section class="mail__page">
             <div class="page__container _container">
                 <div class="page__body">
                     <h1 class="page__title">Support Your Local Artisans</h1>
@@ -87,7 +87,56 @@
             <div class="page__logo _ibg">
                 <img src="img/big logo/1.jpg" alt="cover">
             </div>
-        </section>
+        </section> -->
+
+
+        {* Filter *}
+
+
+        <div class="main__categories categories">
+            <div class="categories__body">
+                <div class="categories__tirle">Firms</div>
+                {section loop = $firms name = k}
+                <div class="categories__text">
+                    <div class="categories__icon">
+                        <img src="" alt="">
+                    </div>
+                    <a href="catalog.php?id_firm={$firms[k].id}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}" class="">
+                        <div class="categories__paragraf">{$firms[k].name}</div>
+                    </a>
+                </div>
+                {/section}
+                <div class="categories__text">
+                    <div class="categories__icon">
+                        <img src="" alt="">
+                    </div>
+                    <a href="catalog.php" class="">
+                        <div class="categories__paragraf">No Filter</div>
+                    </a>
+                </div>
+                <div class="categories__tirle">Filter</div>
+                <div class="categories__text">
+                    <form action="catalog.php" method="get">
+                        Пошук:
+                        <br><input type="text" name="search" {if isset($search) && !empty($search)}value="{$search}" {else} placeholder="Назва товару"{/if}><br>
+                        Мін Ціна:
+                        <br><input type="number" min="0" name="min_price" {if isset($min_price) && !empty($min_price)}value="{$min_price}" {else}placeholder="Min Price"{/if}><br>
+                        Макс. Ціна:
+                        <br><input type="number" min="0" name="max_price" {if isset($max_price) && !empty($max_price)}value="{$max_price}" {else}placeholder="Max Price"{/if}><br>
+                        {if isset($id_firm) && !empty($id_firm)}
+                            <input type="hidden" name="id_firm" value="{$id_firm}">
+                        {/if}
+                        {if isset($sort) && !empty($sort)}
+                            <input type="hidden" name="sort" value="{$sort}">
+                        {/if}
+                        <input type="submit" name="send" value="Прийняти">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        {*  ////////////////  *}
         <div class="main__slider slider">
             <div class="slider__container _container">
                 <h1 class="slider__text">New Phones</h1>
@@ -114,7 +163,7 @@
                 </div>
             </div>
         </div>
-        <div class="main__companies companies">
+        <!-- <div class="main__companies companies">
             <div class="companies__body">
                 <a href="" class="company">
                     <img src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/apple.jpg" alt="">
@@ -135,27 +184,8 @@
                     <img src="https://video.rozetka.com.ua/img_superportal/smartfony_tv_i_elektronika/brand/huawei.jpg" alt="">
                 </a>
             </div>
-        </div>
-        <div class="main__catalog catalog">
-            <div class="catalog__container _container">
-                <div class="catalog__block block">
-                    <div class="catalog__body">
-                        <a href="" class="block__img">
-                            <img src="" alt="phone">
-                        </a>
-                        <div class="block__body">
-                            <h2 class="body__title">Мобільний телефон XXX</h2>
-                            <div class="body__price">
-                                <div class="price__number">XXX</div>
-                                <a href="">
-                                    <button class="price__button">Придбати</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
+        {$fullContent}
     </main>
     <footer class="footer">
         <div class="footer__top">

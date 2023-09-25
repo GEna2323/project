@@ -107,6 +107,7 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
 
         $content = 'Товар Успішно Оновлено';
 
+        header('refresh:1;url=catalog_index.php');
 
 
 
