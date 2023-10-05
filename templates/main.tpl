@@ -65,8 +65,8 @@
                     <a href="profile.php"  class="icon__img">
                         <img src="img/menu/02.svg" alt="user">
                     </a>
-                    <a href=""  class="icon__img">
-                        <img src="img/menu/03.svg" alt="shopping-cart">
+                    <a href="order.php{if isset($min_price, $max_price)}?min_price={$min_price}&max_price={$max_price}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"  class="icon__img">
+                        <img src="img/menu/03.svg" alt="shopping-cart"> - {if isset($count_basket) && !empty($count_basket)}{$count_basket}{else}0{/if}
                     </a>
                 </div>
             </div>
@@ -97,7 +97,7 @@
             <div class="categories__body">
                 <div class="categories__tirle">Firms</div>
                 {section loop = $firms name = k}
-                <div class="categories__text">
+                <div class="categories__text" {if isset($id_firm) && $id_firm == $firms[k].id}style="background-color:white; flex:1 1 auto; border-radius:20px"{/if}>
                     <div class="categories__icon">
                         <img src="" alt="">
                     </div>

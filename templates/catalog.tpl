@@ -21,7 +21,7 @@
                     <h2 class="body__title">Мобільний телефон {$catalog[k].model}</h2>
                     <div class="body__price">
                         <div class="price__number">{$catalog[k].price} грн.</div>
-                        <a href="">
+                        <a href="basket.php?id={$catalog[k].id}&mode=add{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($min_price, $max_price)}&min_price={$min_price}&max_price={$max_price}{/if}">
                             <button class="price__button">Придбати</button>
                         </a>
                     </div>

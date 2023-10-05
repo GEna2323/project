@@ -29,6 +29,22 @@
         $smarty_main -> assign('title', $row['title']);
         $smarty_main -> assign('fullContent', $row['fullContent']);
 
+        /* Basket */
+
+        $count_basket = 0;
+
+        if (isset($_SESSION['basket']) && !empty($_SESSION['basket'])){
+            if (count($_SESSION['basket']) > 0){
+                for($i = 0; $i < count($_SESSION['basket']); $i++){
+                    $count_basket += $_SESSION['basket'][$i]['count'];
+                }
+            }
+        }
+
+        $smarty_main -> assign('count_basket', $count_basket);
+
+
+
         //////////////////
             /* Меню */
 

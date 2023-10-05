@@ -72,7 +72,7 @@
         $query_page .= " and $final_search";
     }
 
-    $result_page = mysqli_query($dbc, $query_page) or die("Query Error");
+    $result_page = mysqli_query($dbc, $query_page) or die("Query Page Error");
     $row_page = mysqli_fetch_array($result_page);
     $count_page = ceil((mysqli_num_rows($result_page))/$note);
 

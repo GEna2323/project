@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     define('SMARTY_LIB', 'libs/');
 
     require_once(SMARTY_LIB.'Smarty.class.php');
