@@ -2,7 +2,7 @@
 
     require_once('header.php');
 
-    $page = 'index';
+    $setting_page = 'index';
 
     require_once('main.php');
 

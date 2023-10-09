@@ -1,7 +1,7 @@
 <?php
 
     require_once('header.php');
-    $page = 'catalog';
+    $setting_page = 'catalog';
     $smarty_order = new Smarty();
 
     $params = [];

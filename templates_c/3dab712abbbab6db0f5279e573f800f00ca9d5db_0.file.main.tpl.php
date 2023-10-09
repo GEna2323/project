@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-10-02 10:58:53
+/* Smarty version 4.3.2, created on 2023-10-08 23:19:35
   from 'C:\OSPanel\domains\project\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_651a783db03601_39343720',
+  'unifunc' => 'content_65230ed7d2d8e7_97426317',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dab712abbbab6db0f5279e573f800f00ca9d5db' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\templates\\main.tpl',
-      1 => 1696233527,
+      1 => 1696796371,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651a783db03601_39343720 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65230ed7d2d8e7_97426317 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +55,7 @@ if ($__section_k_0_total !== 0) {
 for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
 ?>
                         <li class="menu__item">
-                            <a href="<?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['page'];?>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['setting_page'];?>
 .php" class="menu__href"><?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['name'];?>
 </a>
                         </li>
@@ -84,7 +84,7 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                     <a href="" class="icon__img">
                         <img src="img/menu/01.svg" alt="loupe">
                     </a>
-                    <a href="profile.php"  class="icon__img">
+                    <a href="login.php"  class="icon__img">
                         <img src="img/menu/02.svg" alt="user">
                     </a>
                     <a href="order.php<?php if ((isset($_smarty_tpl->tpl_vars['min_price']->value) && isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>?min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
@@ -125,7 +125,7 @@ echo $_smarty_tpl->tpl_vars['count_basket']->value;
 
 
         
-
+        <?php if ((isset($_smarty_tpl->tpl_vars['setting_page']->value)) && $_smarty_tpl->tpl_vars['setting_page']->value == 'catalog') {?>
         <div class="main__categories categories">
             <div class="categories__body">
                 <div class="categories__tirle">Firms</div>
@@ -191,6 +191,7 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
             </div>
         </div>
 
+
                 <div class="main__slider slider">
             <div class="slider__container _container">
                 <h1 class="slider__text">New Phones</h1>
@@ -217,6 +218,7 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
                 </div>
             </div>
         </div>
+        <?php }?>
         <!-- <div class="main__companies companies">
             <div class="companies__body">
                 <a href="" class="company">
@@ -239,8 +241,10 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
                 </a>
             </div>
         </div> -->
-        <?php echo $_smarty_tpl->tpl_vars['fullContent']->value;?>
+        <div <?php if (!(isset($_smarty_tpl->tpl_vars['setting_page']->value))) {?>style="margin-top:135px"<?php }?>>
+            <?php echo $_smarty_tpl->tpl_vars['fullContent']->value;?>
 
+        </div>
     </main>
     <footer class="footer">
         <div class="footer__top">

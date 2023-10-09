@@ -23,7 +23,7 @@
                 <ul class="menu__list">
                     {section loop = $menu name = k}
                         <li class="menu__item">
-                            <a href="{$menu[k].page}.php" class="menu__href">{$menu[k].name}</a>
+                            <a href="{$menu[k].setting_page}.php" class="menu__href">{$menu[k].name}</a>
                         </li>
                     {/section}
                     <li class="menu__item">
@@ -62,7 +62,7 @@
                     <a href="" class="icon__img">
                         <img src="img/menu/01.svg" alt="loupe">
                     </a>
-                    <a href="profile.php"  class="icon__img">
+                    <a href="login.php"  class="icon__img">
                         <img src="img/menu/02.svg" alt="user">
                     </a>
                     <a href="order.php{if isset($min_price, $max_price)}?min_price={$min_price}&max_price={$max_price}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"  class="icon__img">
@@ -92,7 +92,7 @@
 
         {* Filter *}
 
-
+        {if isset($setting_page) && $setting_page == 'catalog'}
         <div class="main__categories categories">
             <div class="categories__body">
                 <div class="categories__tirle">Firms</div>
@@ -136,6 +136,7 @@
             </div>
         </div>
 
+
         {*  ////////////////  *}
         <div class="main__slider slider">
             <div class="slider__container _container">
@@ -163,6 +164,7 @@
                 </div>
             </div>
         </div>
+        {/if}
         <!-- <div class="main__companies companies">
             <div class="companies__body">
                 <a href="" class="company">
@@ -185,7 +187,9 @@
                 </a>
             </div>
         </div> -->
-        {$fullContent}
+        <div {if !isset($setting_page)}style="margin-top:135px"{/if}>
+            {$fullContent}
+        </div>
     </main>
     <footer class="footer">
         <div class="footer__top">

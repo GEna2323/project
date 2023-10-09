@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="72388213-7b06-4f86-9ede-ac6d898d1fab" name="GVshop" url="http://project">
+      <webServer id="97052a86-8a4f-4011-a21e-dad0352a0376" name="project" url="http://project">
         <fileTransfer mountedRoot="C:\OSPanel\domains\project" accessType="MOUNT" port="0" />
       </webServer>
     </option>

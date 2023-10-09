@@ -1,9 +1,9 @@
 <head>
-    <link rel="stylesheet" href="css/basket.css">
+    <link rel="stylesheet" type="text/css" href="../css/basket.css">
 </head>
 <body>
 <form action="basket.php" method="post">
-    <table style="margin-left:300px">
+    <table>
         <tr>
             <th>№</th>
             <th>Photo</th>

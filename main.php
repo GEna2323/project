@@ -1,8 +1,8 @@
 <?php
 
-    if (isset($page)) {
+    if (isset($setting_page)) {
 
-        $query = "select metaTitle, metaDiscription, metaKeyWords, title, fullContent from settingPage where page = '$page'";
+        $query = "select metaTitle, metaDiscription, metaKeyWords, title, fullContent from settingPage where setting_page = '$setting_page'";
 
         $result = mysqli_query($dbc, $query) or die("Query Error");
 
@@ -48,7 +48,7 @@
         //////////////////
             /* Меню */
 
-        $query_menu = "select name, page from settingPage order by prior asc";
+        $query_menu = "select name, setting_page from settingPage where prior < 4 order by prior asc";
 
         $result_menu = mysqli_query($dbc, $query_menu) or die("Query_Menu Error");
 
@@ -56,7 +56,7 @@
 
         while($row_menu = mysqli_fetch_array($result_menu)){
 
-            $menu[] = ['name'=>$row_menu['name'], 'page'=>$row_menu['page']];
+            $menu[] = ['name'=>$row_menu['name'], 'setting_page'=>$row_menu['setting_page']];
 
         }
 

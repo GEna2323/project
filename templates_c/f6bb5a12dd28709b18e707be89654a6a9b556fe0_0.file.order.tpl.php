@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-10-02 11:13:54
+/* Smarty version 4.3.2, created on 2023-10-08 23:48:39
   from 'C:\OSPanel\domains\project\templates\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_651a7bc28f1351_62000082',
+  'unifunc' => 'content_652315a771a834_37454122',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6bb5a12dd28709b18e707be89654a6a9b556fe0' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\templates\\order.tpl',
-      1 => 1696234135,
+      1 => 1696798118,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651a7bc28f1351_62000082 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652315a771a834_37454122 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
-    <link rel="stylesheet" href="css/basket.css">
+    <link rel="stylesheet" type="text/css" href="../css/basket.css">
 </head>
 <body>
 <form action="basket.php" method="post">
-    <table style="margin-left:300px">
+    <table>
         <tr>
             <th>№</th>
             <th>Photo</th>
