@@ -108,9 +108,9 @@
     }
     else{
         if (isset($ready_params) && !empty($ready_params)){
-            header("location:catalog.php?$ready_params");
+            header("location:list.php?$ready_params");
         }
         else{
-            header("location:catalog.php");
+            header("location:list.php");
         }
     }

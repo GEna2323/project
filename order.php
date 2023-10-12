@@ -1,7 +1,7 @@
 <?php
 
     require_once('header.php');
-    $setting_page = 'catalog';
+    $setting_page = 'list';
     $smarty_order = new Smarty();
 
     $params = [];
@@ -52,10 +52,10 @@
     }
     else{
         if (!empty($ready_params)){
-            header("location:catalog.php?{$ready_params}");
+            header("location:list.php?{$ready_params}");
         }
         else{
-            header('location:catalog.php');
+            header('location:list.php');
         }
     }
 

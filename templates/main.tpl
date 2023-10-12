@@ -62,9 +62,15 @@
                     <a href="" class="icon__img">
                         <img src="img/menu/01.svg" alt="loupe">
                     </a>
-                    <a href="login.php"  class="icon__img">
-                        <img src="img/menu/02.svg" alt="user">
-                    </a>
+                    {if isset($client_id)}
+                        <a href="profile.php"  class="icon__img">
+                            <img src="img/menu/02.svg" alt="user">
+                        </a>
+                        {else}
+                        <a href="login.php"  class="icon__img">
+                            <img src="img/menu/02.svg" alt="user">
+                        </a>
+                    {/if}
                     <a href="order.php{if isset($min_price, $max_price)}?min_price={$min_price}&max_price={$max_price}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"  class="icon__img">
                         <img src="img/menu/03.svg" alt="shopping-cart"> - {if isset($count_basket) && !empty($count_basket)}{$count_basket}{else}0{/if}
                     </a>
@@ -92,7 +98,7 @@
 
         {* Filter *}
 
-        {if isset($setting_page) && $setting_page == 'catalog'}
+        {if isset($setting_page) && $setting_page == 'list'}
         <div class="main__categories categories">
             <div class="categories__body">
                 <div class="categories__tirle">Firms</div>
@@ -101,7 +107,7 @@
                     <div class="categories__icon">
                         <img src="" alt="">
                     </div>
-                    <a href="catalog.php?id_firm={$firms[k].id}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}" class="">
+                    <a href="list.php?id_firm={$firms[k].id}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}" class="">
                         <div class="categories__paragraf">{$firms[k].name}</div>
                     </a>
                 </div>
@@ -110,13 +116,13 @@
                     <div class="categories__icon">
                         <img src="" alt="">
                     </div>
-                    <a href="catalog.php" class="">
+                    <a href="list.php" class="">
                         <div class="categories__paragraf">No Filter</div>
                     </a>
                 </div>
                 <div class="categories__tirle">Filter</div>
                 <div class="categories__text">
-                    <form action="catalog.php" method="get">
+                    <form action="list.php" method="get">
                         Пошук:
                         <br><input type="text" name="search" {if isset($search) && !empty($search)}value="{$search}" {else} placeholder="Назва товару"{/if}><br>
                         Мін Ціна:
@@ -187,7 +193,7 @@
                 </a>
             </div>
         </div> -->
-        <div {if !isset($setting_page)}style="margin-top:135px"{/if}>
+        <div class="fullCatalog" {if !isset($setting_page)}style="margin-top:135px"{/if}>
             {$fullContent}
         </div>
     </main>

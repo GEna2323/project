@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-10-02 11:50:37
+/* Smarty version 4.3.2, created on 2023-10-12 10:28:24
   from 'C:\OSPanel\domains\project\templates\catalog.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_651a845dd527c6_51306689',
+  'unifunc' => 'content_6527a018bce2b2_04116378',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd3dae9fd247318d2cfceecef2b88fcd36591d903' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\templates\\catalog.tpl',
-      1 => 1696236233,
+      1 => 1697095700,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651a845dd527c6_51306689 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6527a018bce2b2_04116378 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div style="padding-left:300px">
-    <a href="catalog.php?sort=desc<?php if ((isset($_smarty_tpl->tpl_vars['active_page']->value)) && !empty($_smarty_tpl->tpl_vars['active_page']->value)) {?>&page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;
+    <a href="list.php?sort=desc<?php if ((isset($_smarty_tpl->tpl_vars['active_page']->value)) && !empty($_smarty_tpl->tpl_vars['active_page']->value)) {?>&page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['id_firm']->value)) && !empty($_smarty_tpl->tpl_vars['id_firm']->value)) {?>&id_firm=<?php echo $_smarty_tpl->tpl_vars['id_firm']->value;
 }
@@ -32,7 +32,7 @@ if ((isset($_smarty_tpl->tpl_vars['max_price']->value) && isset($_smarty_tpl->tp
 }
 if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>&search=<?php echo $_smarty_tpl->tpl_vars['search']->value;
 }?>">Дешеві</a> |
-    <a href="catalog.php?sort=asc<?php if ((isset($_smarty_tpl->tpl_vars['active_page']->value)) && !empty($_smarty_tpl->tpl_vars['active_page']->value)) {?>&page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;
+    <a href="list.php?sort=asc<?php if ((isset($_smarty_tpl->tpl_vars['active_page']->value)) && !empty($_smarty_tpl->tpl_vars['active_page']->value)) {?>&page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['id_firm']->value)) && !empty($_smarty_tpl->tpl_vars['id_firm']->value)) {?>&id_firm=<?php echo $_smarty_tpl->tpl_vars['id_firm']->value;
 }
@@ -99,7 +99,7 @@ if ((isset($_smarty_tpl->tpl_vars['min_price']->value) && isset($_smarty_tpl->tp
             <?php if ($_smarty_tpl->tpl_vars['active_page']->value == 1) {?>
                 <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> < </td>
                 <?php } else { ?>
-                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value-1;
+                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="list.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value-1;
 if ((isset($_smarty_tpl->tpl_vars['sort']->value)) && !empty($_smarty_tpl->tpl_vars['sort']->value)) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['id_firm']->value)) && !empty($_smarty_tpl->tpl_vars['id_firm']->value)) {?>&id_firm=<?php echo $_smarty_tpl->tpl_vars['id_firm']->value;
@@ -120,7 +120,7 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value <= $_smarty_tpl->tpl_vars['co
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
 </td>
                     <?php } else { ?>
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page=<?php echo $_smarty_tpl->tpl_vars['i']->value;
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="list.php?page=<?php echo $_smarty_tpl->tpl_vars['i']->value;
 if ((isset($_smarty_tpl->tpl_vars['sort']->value)) && !empty($_smarty_tpl->tpl_vars['sort']->value)) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['id_firm']->value)) && !empty($_smarty_tpl->tpl_vars['id_firm']->value)) {?>&id_firm=<?php echo $_smarty_tpl->tpl_vars['id_firm']->value;
@@ -138,7 +138,7 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
             <?php if ($_smarty_tpl->tpl_vars['active_page']->value == $_smarty_tpl->tpl_vars['count_page']->value) {?>
                 <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> > </td>
                 <?php } else { ?>
-                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value+1;
+                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="list.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value+1;
 if ((isset($_smarty_tpl->tpl_vars['sort']->value)) && !empty($_smarty_tpl->tpl_vars['sort']->value)) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['id_firm']->value)) && !empty($_smarty_tpl->tpl_vars['id_firm']->value)) {?>&id_firm=<?php echo $_smarty_tpl->tpl_vars['id_firm']->value;

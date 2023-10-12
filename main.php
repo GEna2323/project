@@ -75,6 +75,27 @@
 
         $smarty_main -> assign('firms', $firms);
 
+        ////////////////////
+        /*   Clients  */
+
+        if (isset($_COOKIE['client_id'], $_COOKIE['client_FIO'], $_COOKIE['client_email'], $_COOKIE['client_adress'], $_COOKIE['client_phone'])){
+
+            $_SESSION['client_id'] = $_COOKIE['client_id'];
+            $_SESSION['client_FIO'] = $_COOKIE['client_FIO'];
+            $_SESSION['client_email'] = $_COOKIE['client_email'];
+            $_SESSION['client_adress'] = $_COOKIE['client_adress'];
+            $_SESSION['client_phone'] = $_COOKIE['client_phone'];
+
+            $smarty_main -> assign('client_id', $_SESSION['client_id']);
+            $smarty_main -> assign('client_FIO', $_SESSION['client_FIO']);
+            $smarty_main -> assign('client_email', $_SESSION['client_email']);
+            $smarty_main -> assign('client_adress', $_SESSION['client_adress']);
+            $smarty_main -> assign('client_phone', $_SESSION['client_phone']);
+
+        }
+
+
+
         //////////////////
 
 

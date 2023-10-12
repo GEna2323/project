@@ -1,8 +1,8 @@
 {* Sort *}
 
 <div style="padding-left:300px">
-    <a href="catalog.php?sort=desc{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}">Дешеві</a> |
-    <a href="catalog.php?sort=asc{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}">Дорогі</a>
+    <a href="list.php?sort=desc{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}">Дешеві</a> |
+    <a href="list.php?sort=asc{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}">Дорогі</a>
 </div>
 
 
@@ -40,19 +40,19 @@
             {if $active_page == 1}
                 <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> < </td>
                 {else}
-                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page - 1}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"> < </a></td>
+                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="list.php?page={$active_page - 1}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"> < </a></td>
             {/if}
             {for $i = 1; $i <= $count_page; $i++}
                 {if ($i == $active_page)}
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px">{$i}</td>
                     {else}
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$i}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}">{$i}</a></td>
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="list.php?page={$i}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}">{$i}</a></td>
                 {/if}
             {/for}
             {if $active_page == $count_page}
                 <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> > </td>
                 {else}
-                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page + 1}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"> > </a></td>
+                <td style="background-color:grey; padding:7px; border-radius:10px"><a href="list.php?page={$active_page + 1}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($max_price, $min_price)}&max_price={$max_price}&min_price={$min_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"> > </a></td>
             {/if}
         </tr>
     </table>
