@@ -72,9 +72,11 @@
                         </a>
                     {/if}
                     <a href="order.php{if isset($min_price, $max_price)}?min_price={$min_price}&max_price={$max_price}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($id_firm) && !empty($id_firm)}&id_firm={$id_firm}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}"  class="icon__img">
-                        <img src="img/menu/03.svg" alt="shopping-cart"> - {if isset($count_basket) && !empty($count_basket)}{$count_basket}{else}0{/if}
+                        <img src="img/menu/03.svg" alt="shopping-cart">
                     </a>
                 </div>
+                {if isset($count_basket) && !empty($count_basket)}- {$count_basket}{else}- 0{/if}
+
             </div>
         </div>
     </header>

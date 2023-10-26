@@ -33,14 +33,14 @@
             $query_up = "update client set FIO='{$_POST['FIO']}', adress='{$_POST['adress']}', phone='{$_POST['phone']}' where id = {$_POST['id']}";
             mysqli_query($dbc, $query_up) or die("Query_UP Error");
 
-            $query_email_check = "select email from client where id = {$_POST['id']}";
+            $query_email_check = "select id from client where email = '{$_POST['email']}'";
             $result = mysqli_query($dbc, $query_email_check) or die("Query Email Check Error");
             $row = mysqli_fetch_array($result);
 
-            if(!empty($row['email']) && $row['email'] == $_POST['email']){
+            if(!empty($row['id']) && $row['id'] == $_POST['id']){
                 $smarty_profile -> assign('tmp',4);
             }
-            elseif (mysqli_num_rows($result) > 0){
+            elseif (!empty($row['id']) && $row['id'] != $_POST['id']){
                 $smarty_profile -> assign('tmp', 3);
             }
             else{

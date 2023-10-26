@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-10-12 10:35:26
+/* Smarty version 4.3.2, created on 2023-10-21 21:00:25
   from 'C:\OSPanel\domains\project\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_6527a1be883e42_26047180',
+  'unifunc' => 'content_653411b90e6af1_71173545',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '48143d41793f33327724c94e0b6eb33d9449d875' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\templates\\login.tpl',
-      1 => 1697096094,
+      1 => 1697911206,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6527a1be883e42_26047180 (Smarty_Internal_Template $_smarty_tpl) {
+function content_653411b90e6af1_71173545 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
@@ -59,7 +59,9 @@ function content_6527a1be883e42_26047180 (Smarty_Internal_Template $_smarty_tpl)
         <h1>Неправильно Введені Email або Password</h1>
     </div>
     <?php } else { ?>
-    <h1>Error</h1>
+    <div class="access">
+        <h1>Неправильно Введені Email або Password</h1>
+    </div>
 <?php }?>
 </body><?php }
 }

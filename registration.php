@@ -15,7 +15,7 @@
             $smarty_reg -> assign('content', $content);
         }
         else{
-            $query_reg = "insert into client (FIO, email, password, LastLogin) values('".Protection($dbc, $_POST['FIO'])."', '".Protection($dbc, $_POST['email'])."', sha1('".Protection($dbc, $_POST['password'])."'), now())";
+            $query_reg = "insert into client (FIO, email, password, LastLogin, adress, phone) values('".Protection($dbc, $_POST['FIO'])."', '".Protection($dbc, $_POST['email'])."', sha1('".Protection($dbc, $_POST['password'])."'), now(),'Не Вказано','Не Вказано')";
             mysqli_query($dbc, $query_reg) or die("Query Reg Error");
         }
 

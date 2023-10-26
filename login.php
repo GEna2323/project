@@ -15,12 +15,6 @@
         $result = mysqli_query($dbc, $query) or die("Query Error");
         $row = mysqli_fetch_array($result);
 
-        if (empty($row['adress'])){
-            $row['adress'] = 'Не Вказано';
-        }
-        if (empty($row['phone'])){
-            $row['phone'] = 'Не вказано';
-        }
 
         if (mysqli_num_rows($result) > 0){
 

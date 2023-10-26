@@ -86,3 +86,8 @@ label{
 #chk:checked ~ .signup label{
     transform: scale(.6);
 }
+.access{
+    background-color: #94ddf5;
+    padding: 20px;
+    border-radius:15px;
+}

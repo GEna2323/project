@@ -36,6 +36,8 @@
         <h1>Неправильно Введені Email або Password</h1>
     </div>
     {else}
-    <h1>Error</h1>
+    <div class="access">
+        <h1>Неправильно Введені Email або Password</h1>
+    </div>
 {/if}
 </body>

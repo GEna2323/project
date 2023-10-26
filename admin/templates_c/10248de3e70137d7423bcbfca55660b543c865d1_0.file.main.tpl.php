@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-09 16:12:26
+/* Smarty version 4.3.2, created on 2023-10-26 11:39:32
   from 'C:\OSPanel\domains\project\admin\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64fc6f3a01d8c5_07218935',
+  'unifunc' => 'content_653a25c45dc4d6_46544888',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10248de3e70137d7423bcbfca55660b543c865d1' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
-      1 => 1694265143,
+      1 => 1698305885,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64fc6f3a01d8c5_07218935 (Smarty_Internal_Template $_smarty_tpl) {
+function content_653a25c45dc4d6_46544888 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -88,14 +88,14 @@ function content_64fc6f3a01d8c5_07218935 (Smarty_Internal_Template $_smarty_tpl)
                 </li>
 
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item pcoded-hasmenu active pcoded-trigger">
-                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Управління категоріями</span></a>
+                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Категорії</span></a>
                     <ul class="pcoded-submenu">
                         <li class="active"><a href="category_add.php" class="">Додати категорія</a></li>
                         <li class=""><a href="category_index.php" class="">Редагування/Видалення</a></li>
                                             </ul>
                 </li>
                 <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Управління товарами</span></a>
+                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Товари</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="catalog_add.php" class="" >Додати товар</a></li>
                         <li class=""><a href="catalog_index.php" class="">Редагування/Видалення</a></li>
@@ -109,7 +109,14 @@ function content_64fc6f3a01d8c5_07218935 (Smarty_Internal_Template $_smarty_tpl)
                 </li>
                     <?php }?>
 
-                                <?php } else { ?>
+                                                        <li data-username="advance components Alert gridstack lightbox modal notification pnotify rating rangeslider slider syntax highlighter Tour Tree view Nestable Toolbar" class="nav-item pcoded-hasmenu">
+                                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Замовлення</span></a>
+                                        <ul class="pcoded-submenu">
+                                            <li class=""><a href="order_status.php" class="">Виконання/Видалення</a></li>
+                                            <li class=""><a href="archiv.php" class="">Архів</a></li>
+                                                                                    </ul>
+                                    </li>
+                            <?php } else { ?>
             <li class="nav-item pcoded-menu-caption">
                 <label>Увійдіть, для доступу в адмін частину</label>
             </li>

@@ -61,7 +61,7 @@
                 </li>
 
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item pcoded-hasmenu active pcoded-trigger">
-                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Управління категоріями</span></a>
+                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Категорії</span></a>
                     <ul class="pcoded-submenu">
                         <li class="active"><a href="category_add.php" class="">Додати категорія</a></li>
                         <li class=""><a href="category_index.php" class="">Редагування/Видалення</a></li>
@@ -72,7 +72,7 @@
                     </ul>
                 </li>
                 <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Управління товарами</span></a>
+                    <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Товари</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="catalog_add.php" class="" >Додати товар</a></li>
                         <li class=""><a href="catalog_index.php" class="">Редагування/Видалення</a></li>
@@ -130,11 +130,13 @@
                                             <li class=""><a href="bc_extra.html" class="">Other<span class="pcoded-badge label label-primary">NEW</span></a></li>
                                         </ul>
                                     </li>
+                                    *}
                                     <li data-username="advance components Alert gridstack lightbox modal notification pnotify rating rangeslider slider syntax highlighter Tour Tree view Nestable Toolbar" class="nav-item pcoded-hasmenu">
-                                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Advance</span></a>
+                                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Замовлення</span></a>
                                         <ul class="pcoded-submenu">
-                                            <li class=""><a href="ac_alert.html" class="">Sweet alert</a></li>
-                                            <li class=""><a href="ac-datepicker-componant.html" class="">Datepicker</a></li>
+                                            <li class=""><a href="order_status.php" class="">Виконання/Видалення</a></li>
+                                            <li class=""><a href="archiv.php" class="">Архів</a></li>
+                                            {*
                                             <li class=""><a href="ac_gridstack.html" class="">Gridstack</a></li>
                                             <li class=""><a href="ac_lightbox.html" class="">Lightbox</a></li>
                                             <li class=""><a href="ac_modal.html" class="">Modal</a></li>
@@ -148,8 +150,10 @@
                                             <li class=""><a href="ac_tour.html" class="">Tour</a></li>
                                             <li class=""><a href="ac_treeview.html" class="">Tree view</a></li>
                                             <li class=""><a href="ac_toolbar.html" class="">Toolbar</a></li>
+                                            *}
                                         </ul>
                                     </li>
+                {*
                                     <li data-username="extra components Session Timeout Session Idle Timeout Offline" class="nav-item pcoded-hasmenu">
                                         <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-package"></i></span><span class="pcoded-mtext">Extra</span></a>
                                         <ul class="pcoded-submenu">

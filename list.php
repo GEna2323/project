@@ -92,10 +92,10 @@ $skip = ($active_page - 1) * $note;
 /* Основний запит */
 
 if (isset($_GET['id_firm']) && !empty($_GET['id_firm'])){
-    $query = "select catalog.id as catalog_id, model, price, photo.name as photo from photo inner join catalog on catalog.id = photo.product_id where status = 1 and photo.product_id = catalog.id and catalog.id_firms = {$_GET['id_firm']}";
+    $query = "select catalog.count as catalog_count,catalog.id as catalog_id, model, price, photo.name as photo from photo inner join catalog on catalog.id = photo.product_id where status = 1 and photo.product_id = catalog.id and catalog.id_firms = {$_GET['id_firm']}";
 }
 else{
-    $query = "select catalog.id as catalog_id, model, price, photo.name as photo from photo inner join catalog on catalog.id = photo.product_id where status = 1 and photo.product_id = catalog.id";
+    $query = "select catalog.count as catalog_count, catalog.id as catalog_id, model, price, photo.name as photo from photo inner join catalog on catalog.id = photo.product_id where status = 1 and photo.product_id = catalog.id";
 }
 
 /* Sort */
@@ -150,7 +150,7 @@ else {
 
     $catalog = [];
     while ($row = mysqli_fetch_array($result)) {
-        $catalog[] = ['id' => $row['catalog_id'], 'model' => $row['model'], 'price' => $row['price'], 'photo' => $row['photo']];
+        $catalog[] = ['id' => $row['catalog_id'], 'model' => $row['model'], 'price' => $row['price'], 'photo' => $row['photo'],'count'=>$row['catalog_count']];
     }
 
     /* ///////// */
