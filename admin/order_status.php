@@ -40,9 +40,46 @@
 
         }
 
+        /* Visitors */
+
+        $query_visitor = "select idVisitor ,FIO, email, adress, phone, countCat, orderData, description, model, price, name from visitor inner join visitorRelationOrder on visitor.id = visitorRelationOrder.idVisitor inner join catalog on visitorRelationOrder.idCat = catalog.id inner join photo on catalog.id = photo.product_id where photo.status = 1 and visitorRelationOrder.status = 1 order by orderData asc, FIO asc";
+        $result_visitor = mysqli_query($dbc, $query_visitor) or die("Query Visitor Error");
+
+        $total_price = 0;
+        $count_visitor_cat = 0;
+        $change_visitor_id = 0;
+        $change_visitor_data = 0;
+        $visitor = [];
+        $num = 0;
+        while($row_visitor = mysqli_fetch_array($result_visitor)){
+
+            if ($change_visitor_id != $row_visitor['idVisitor'] || $change_visitor_data != $row_visitor['orderData']){
+                $query_check = "select id from visitorRelationOrder where idVisitor = {$row_visitor['idVisitor']} and orderData = '{$row_visitor['orderData']}'";
+                $result_check = mysqli_query($dbc, $query_check) or die("Query Check Error");
+                $row_visitor_cat = mysqli_num_rows($result_check);
+
+                $total_price = 0;
+                $count_visitor_cat = 0;
+                $num++;
+            }
+
+            $full_price = $row_visitor['price'] * $row_visitor['countCat'];
+            $total_price += $full_price;
+            $count_visitor_cat++;
+
+            $visitor[] = ['total_price'=>$total_price,'full_price'=>$full_price,'num'=>$num,'row_visitor_cat'=>$row_visitor_cat,'count_visitor_cat'=>$count_visitor_cat,'change_visitor_id'=>$change_visitor_id,'change_visitor_data'=>$change_visitor_data,'data'=>$row_visitor['orderData'],'id'=>$row_visitor['idVisitor'],'FIO'=>$row_visitor['FIO'],'email'=>$row_visitor['email'],'adress'=>$row_visitor['adress'],'phone'=>$row_visitor['phone'],'count'=>$row_visitor['countCat'],'desc'=>$row_visitor['description'],'model'=>$row_visitor['model'],'price'=>$row_visitor['price'],'photo'=>$row_visitor['name']];
+
+            $change_visitor_data = $row_visitor['orderData'];
+            $change_visitor_id = $row_visitor['idVisitor'];
+
+        }
+
+
+
         /* Assign */
 
         $smarty_order -> assign('client', $client);
+        $smarty_order -> assign('visitor', $visitor);
 
         $content = $smarty_order -> fetch('order_status.tpl');
 

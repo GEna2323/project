@@ -118,7 +118,6 @@
                     <br>
                 {/if}
             {/section}
-
         </div>
         <div class="form__button">
             <input type="submit" name="send" value="CONFIRM" class="button">

@@ -10,11 +10,11 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
     $smarty_cat = new Smarty();
 
     if (isset($_GET['firms']) && !empty($_GET['firms'])){
-        $query_cat = "select catalog.id as catalog_id, model, photo.name as name from Firms left join catalog on Firms.id = catalog.id_firms left join photo on catalog.id = photo.product_id where catalog.id_firms = '{$_GET['firms']}' and (status = 1 or status is null)";
+        $query_cat = "select catalog.id as catalog_id, model, photo.name as name, price from Firms left join catalog on Firms.id = catalog.id_firms left join photo on catalog.id = photo.product_id where catalog.id_firms = '{$_GET['firms']}' and (status = 1 or status is null)";
         $smarty_cat -> assign('newFirma', $_GET['firms']);
     }
     else{
-        $query_cat = "select catalog.id as catalog_id, model, name from catalog left join photo on catalog.id = photo.product_id where status = 1 or photo.status is null";
+        $query_cat = "select catalog.id as catalog_id, model, name, price from catalog left join photo on catalog.id = photo.product_id where status = 1 or photo.status is null";
 
     }
     $result_cat = mysqli_query($dbc, $query_cat) or die("Query_cat Error");
@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
             $row_cat['name'] = 'noFoto.png';
         }
 
-        $catalog[] = ['id'=>$row_cat['catalog_id'], 'model'=>$row_cat['model'],'num'=>$num,'photo'=>$row_cat['name']];
+        $catalog[] = ['id'=>$row_cat['catalog_id'], 'model'=>$row_cat['model'],'num'=>$num,'photo'=>$row_cat['name'], 'price'=>$row_cat['price']];
         $num++;
 
     }

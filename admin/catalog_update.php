@@ -63,13 +63,18 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
 
     }
 
-    elseif (isset($_POST['old_photo'] ,$_POST['id'], $_POST['model'], $_POST['price'], $_POST['id_firms'], $_POST['count'], $_POST['ram'], $_POST['storage'], $_POST['oc'], $_POST['batery'], $_POST['discription'], $_POST['color'], $_POST['main_photo']) && !empty($_POST['old_photo']) && !empty($_POST['main_photo']) && !empty($_POST['id']) && !empty($_POST['id_firms']) && !empty($_POST['model']) && !empty($_POST['price']) && !empty($_POST['count']) && !empty($_POST['ram']) && !empty($_POST['storage']) && !empty($_POST['oc']) && !empty($_POST['batery'])) {
+    elseif (isset($_POST['old_photo'] ,$_POST['id'], $_POST['model'], $_POST['price'], $_POST['id_firms'], $_POST['count'], $_POST['ram'], $_POST['storage'], $_POST['oc'], $_POST['batery'], $_POST['discription'], $_POST['color'], $_POST['main_photo']) && !empty($_POST['old_photo']) && !empty($_POST['main_photo']) && !empty($_POST['id']) && !empty($_POST['id_firms']) && !empty($_POST['model']) && !empty($_POST['price']) && !empty($_POST['ram']) && !empty($_POST['storage']) && !empty($_POST['oc']) && !empty($_POST['batery'])) {
 
-        $query_photo_up = "update photo set status = 1 where product_id = {$_POST['id']} and status = 0 limit 1";
-        mysqli_query($dbc, $query_photo_up) or die("Query Error Photoo up");
 
-        $query_photo = "update photo set status = 0 where id = {$_POST['old_photo']}";
-        mysqli_query($dbc, $query_photo) or die("Query Error Photo");
+        if ($_POST['main_photo'] != $_POST['old_photo']){
+            $query_photo_up = "update photo set status = 1 where id = {$_POST['main_photo']}";
+            mysqli_query($dbc, $query_photo_up) or die("Query Error Photo up");
+
+            $query_photo = "update photo set status = 0 where id = {$_POST['old_photo']}";
+            mysqli_query($dbc, $query_photo) or die("Query Error Photo");
+        }
+
+
 
         $query_check = "select id from photo where product_id = {$_POST['id']}";
         $result_check = mysqli_query($dbc, $query_check) or die("Query Check Error");
@@ -102,7 +107,7 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
 
 
 
-        $query_up = "update catalog set id_firms = '".Protection($dbc, $_POST['id_firms'])."', model='".Protection($dbc, $_POST['model'])."', price='".Protection($dbc, $_POST['price'])."', count='".Protection($dbc, $_POST['ram'])."', storage='".Protection($dbc, $_POST['storage'])."', oc='".Protection($dbc, $_POST['oc'])."', batery='".Protection($dbc, $_POST['batery'])."', discription='".Protection($dbc, $_POST['discription'])."', color='".Protection($dbc, $_POST['color'])."' where id = {$_POST['id']}";
+        $query_up = "update catalog set ram='".Protection($dbc, $_POST['ram'])."',id_firms = '".Protection($dbc, $_POST['id_firms'])."', model='".Protection($dbc, $_POST['model'])."', price='".Protection($dbc, $_POST['price'])."', count='".Protection($dbc, $_POST['count'])."', storage='".Protection($dbc, $_POST['storage'])."', oc='".Protection($dbc, $_POST['oc'])."', batery='".Protection($dbc, $_POST['batery'])."', discription='".Protection($dbc, $_POST['discription'])."', color='".Protection($dbc, $_POST['color'])."' where id = {$_POST['id']}";
         mysqli_query($dbc, $query_up) or die("Query_UP Error");
 
         $content = 'Товар Успішно Оновлено';
@@ -112,13 +117,16 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
 
 
     }
+    else{
+        header('location:404/404page.html');
+    }
 
 
 
 
 
 
-        $smarty_main -> assign('title', 'Редагування Товару');
+    $smarty_main -> assign('title', 'Редагування Товару');
     $smarty_main -> assign('content', $content);
 
     mysqli_close($dbc);

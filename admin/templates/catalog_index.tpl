@@ -18,6 +18,7 @@
             <th>№</th>
             <th>Фото</th>
             <th>Модель</th>
+            <th>Цена</th>
             <th colspan="2">Управління</th>
         </tr>
         {section loop = $catalog name = k}
@@ -25,6 +26,7 @@
                 <td>{$catalog[k].num}</td>
                 <td><img src="../img/{$catalog[k].photo}" width="65px"></td>
                 <td>{$catalog[k].model}</td>
+                <td>{$catalog[k].price}</td>
                 <td><a href="catalog_update.php?id={$catalog[k].id}">Редагування</a></td>
                 <td><a href="catalog_dell.php?id={$catalog[k].id}&model={$catalog[k].model}">Видалення</a></td>
             </tr>

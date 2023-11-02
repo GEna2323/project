@@ -4,10 +4,12 @@
 
 if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'], $_SESSION['user_phone'], $_SESSION['user_role'], $_SESSION['user_photo']) && !empty($_SESSION['user_id']) && !empty($_SESSION['user_email']) && !empty($_SESSION['user_name']) && !empty($_SESSION['user_phone']) && !empty($_SESSION['user_role']) && !empty($_SESSION['user_photo'])) {
 
+    require_once('admin_info.php');
+
 
     if (isset($_GET['id']) && !empty($_GET['id'])){
 
-        $query = "select name, status from photo where id = {$_GET['id']}";
+        $query = "select name, status, product_id from photo where id = {$_GET['id']}";
         $result = mysqli_query($dbc, $query) or die("Query Error");
         $row = mysqli_fetch_array($result);
 
@@ -16,6 +18,7 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
         $smarty_dell -> assign('id', $_GET['id']);
         $smarty_dell -> assign('photo', $row['name']);
         $smarty_dell -> assign('status', $row['status']);
+        $smarty_dell -> assign('product_id', $row['product_id']);
 
         $content = $smarty_dell -> fetch('photo_dell.tpl');
 
@@ -42,7 +45,16 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
         $content = "Фото Успішно видалене";
 
     }
+    elseif(isset($_POST['id'], $_POST['dell'], $_POST['send'], $_POST['product_id']) && !empty($_POST['product_id']) && !empty($_POST['id']) && $_POST['dell'] == 'No') {
 
+        $content = "Видалення Відмінено";
+
+        header("refresh:1;url=catalog_update.php?id={$_POST['product_id']}");
+
+    }
+    else{
+        header('location:404/404page.html');
+    }
 
     $smarty_main -> assign('title', 'Видалення Фото');
     $smarty_main -> assign('content', $content);

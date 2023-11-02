@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-08-27 20:13:54
+/* Smarty version 4.3.2, created on 2023-10-28 17:10:51
   from 'C:\OSPanel\domains\project\admin\templates\catalog_update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_64eb84520f0bd0_39768217',
+  'unifunc' => 'content_653d166b15fbf3_61563734',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c18a6fbfdb626b8411a368ad31fbf7dc15d77207' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\catalog_update.tpl',
-      1 => 1693156428,
+      1 => 1698502228,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64eb84520f0bd0_39768217 (Smarty_Internal_Template $_smarty_tpl) {
+function content_653d166b15fbf3_61563734 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,7 +179,6 @@ for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 }
 }
 ?>
-
         </div>
         <div class="form__button">
             <input type="submit" name="send" value="CONFIRM" class="button">
