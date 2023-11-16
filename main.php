@@ -98,6 +98,11 @@
 
         //////////////////
 
+        $script = $_SERVER['PHP_SELF'];
+        $smarty_main -> assign('script', $script);
+
+        $smarty_main -> configLoad("conf/$leng.conf");
+
 
         mysqli_close($dbc);
         $smarty_main -> display('main.tpl');

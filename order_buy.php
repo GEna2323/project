@@ -70,7 +70,7 @@
 
     $fullContent = $smarty_order -> fetch('order_buy.tpl');
 
-
+    header("refresh:2;url=list.php");
 
 
     require_once('main.php');

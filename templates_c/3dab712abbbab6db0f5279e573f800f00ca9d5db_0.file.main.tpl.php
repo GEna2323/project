@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-10-21 13:47:50
+/* Smarty version 4.3.2, created on 2023-11-16 13:25:01
   from 'C:\OSPanel\domains\project\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_6533ac56969fd1_81365089',
+  'unifunc' => 'content_6555edfde96b91_52121707',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dab712abbbab6db0f5279e573f800f00ca9d5db' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\templates\\main.tpl',
-      1 => 1697885269,
+      1 => 1700130300,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6533ac56969fd1_81365089 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6555edfde96b91_52121707 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -135,6 +135,30 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
         <?php if ((isset($_smarty_tpl->tpl_vars['setting_page']->value)) && $_smarty_tpl->tpl_vars['setting_page']->value == 'list') {?>
         <div class="main__categories categories">
             <div class="categories__body">
+                <div class="categories__tirle">Filter</div>
+                <div class="categories__text">
+                    <form action="list.php" method="get">
+                        Пошук:
+                        <br><input type="text" name="search" <?php if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['search']->value;?>
+" <?php } else { ?> placeholder="Назва товару"<?php }?>><br>
+                        Мін Ціна:
+                        <br><input type="number" min="0" name="min_price" <?php if ((isset($_smarty_tpl->tpl_vars['min_price']->value)) && !empty($_smarty_tpl->tpl_vars['min_price']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
+" <?php } else { ?>placeholder="Min Price"<?php }?>><br>
+                        Макс. Ціна:
+                        <br><input type="number" min="0" name="max_price" <?php if ((isset($_smarty_tpl->tpl_vars['max_price']->value)) && !empty($_smarty_tpl->tpl_vars['max_price']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['max_price']->value;?>
+" <?php } else { ?>placeholder="Max Price"<?php }?>><br>
+                        <?php if ((isset($_smarty_tpl->tpl_vars['id_firm']->value)) && !empty($_smarty_tpl->tpl_vars['id_firm']->value)) {?>
+                            <input type="hidden" name="id_firm" value="<?php echo $_smarty_tpl->tpl_vars['id_firm']->value;?>
+">
+                        <?php }?>
+                        <?php if ((isset($_smarty_tpl->tpl_vars['sort']->value)) && !empty($_smarty_tpl->tpl_vars['sort']->value)) {?>
+                            <input type="hidden" name="sort" value="<?php echo $_smarty_tpl->tpl_vars['sort']->value;?>
+">
+                        <?php }?>
+                        <input type="submit" name="send" value="Прийняти">
+                    </form>
+                </div>
+
                 <div class="categories__tirle">Firms</div>
                 <?php
 $__section_k_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['firms']->value) ? count($_loop) : max(0, (int) $_loop));
@@ -170,29 +194,6 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
                     <a href="list.php" class="">
                         <div class="categories__paragraf">No Filter</div>
                     </a>
-                </div>
-                <div class="categories__tirle">Filter</div>
-                <div class="categories__text">
-                    <form action="list.php" method="get">
-                        Пошук:
-                        <br><input type="text" name="search" <?php if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['search']->value;?>
-" <?php } else { ?> placeholder="Назва товару"<?php }?>><br>
-                        Мін Ціна:
-                        <br><input type="number" min="0" name="min_price" <?php if ((isset($_smarty_tpl->tpl_vars['min_price']->value)) && !empty($_smarty_tpl->tpl_vars['min_price']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
-" <?php } else { ?>placeholder="Min Price"<?php }?>><br>
-                        Макс. Ціна:
-                        <br><input type="number" min="0" name="max_price" <?php if ((isset($_smarty_tpl->tpl_vars['max_price']->value)) && !empty($_smarty_tpl->tpl_vars['max_price']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['max_price']->value;?>
-" <?php } else { ?>placeholder="Max Price"<?php }?>><br>
-                        <?php if ((isset($_smarty_tpl->tpl_vars['id_firm']->value)) && !empty($_smarty_tpl->tpl_vars['id_firm']->value)) {?>
-                            <input type="hidden" name="id_firm" value="<?php echo $_smarty_tpl->tpl_vars['id_firm']->value;?>
-">
-                        <?php }?>
-                        <?php if ((isset($_smarty_tpl->tpl_vars['sort']->value)) && !empty($_smarty_tpl->tpl_vars['sort']->value)) {?>
-                            <input type="hidden" name="sort" value="<?php echo $_smarty_tpl->tpl_vars['sort']->value;?>
-">
-                        <?php }?>
-                        <input type="submit" name="send" value="Прийняти">
-                    </form>
                 </div>
 
             </div>
@@ -258,7 +259,8 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
             <div class="footer__main _container">
                 <div class="foter__row">
                     <div class="footer__column">
-                        <div class="footer__label">Company Info</div>
+                        <div class="footer__label"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'com_info');?>
+</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">About Us</a></li>
@@ -269,7 +271,8 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
                         </nav>
                     </div>
                     <div class="footer__column">
-                        <div class="footer__label">Help</div>
+                        <div class="footer__label"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'help');?>
+</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">Delivery and payment</a></li>
@@ -280,7 +283,8 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
                         </nav>
                     </div>
                     <div class="footer__column">
-                        <div class="footer__label">Services</div>
+                        <div class="footer__label"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'servises');?>
+</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">Bonus account</a></li>
@@ -291,7 +295,8 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
                         </nav>
                     </div>
                     <div class="footer__column">
-                        <div class="footer__label">Partners</div>
+                        <div class="footer__label"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'partners');?>
+</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="menu-footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">Sell on G&V Shop</a></li>
@@ -308,11 +313,13 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
             <div class="footer__container _container">
                 <div class="footer__copy">Made With Love By Figmaland All Right Reserved </div>
                 <div class="footer__social social">
-                    <a href="" class="social__item">
-                        <img src="img/footer/social/01.svg" alt="social">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['script']->value;?>
+?leng=en" class="social__item">
+                        <img width="30px" src="img/footer/flags/Flag_of_the_United_Kingdom.png" alt="social">
                     </a>
-                    <a href="" class="social__item">
-                        <img src="img/footer/social/02.svg" alt="social">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['script']->value;?>
+?leng=ua" class="social__item">
+                        <img width="30px" src="img/footer/flags/Flag_of_Ukraine.svg.png" alt="social">
                     </a>
                     <a href="" class="social__item">
                         <img src="img/footer/social/03.svg" alt="social">

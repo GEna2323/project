@@ -110,6 +110,15 @@
         if (isset($ready_params) && !empty($ready_params)){
             header("location:list.php?$ready_params");
         }
+        elseif(isset($_GET['tmp'], $_GET['id']) && !empty($_GET['id']) && $_GET['tmp'] == 1){
+            if (isset($_GET['photo_id']) && !empty($_GET['photo_id'])){
+                header("location:catalog_info.php?id={$_GET['id']}&tmp=added&photo_id={$_GET['photo_id']}");
+            }
+            else{
+                header("location:catalog_info.php?id={$_GET['id']}&tmp=added");
+
+            }
+        }
         else{
             header("location:list.php");
         }

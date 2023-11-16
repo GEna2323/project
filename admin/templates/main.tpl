@@ -135,7 +135,7 @@
                                         <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Замовлення</span></a>
                                         <ul class="pcoded-submenu">
                                             <li class=""><a href="order_status.php" class="">Виконання/Видалення</a></li>
-                                            <li class=""><a href="archiv.php" class="">Архів</a></li>
+                                            <li class=""><a href="order_archiv.php" class="">Архів</a></li>
                                             {*
                                             <li class=""><a href="ac_gridstack.html" class="">Gridstack</a></li>
                                             <li class=""><a href="ac_lightbox.html" class="">Lightbox</a></li>

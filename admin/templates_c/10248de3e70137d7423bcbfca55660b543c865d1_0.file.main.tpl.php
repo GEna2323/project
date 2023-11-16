@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-10-26 11:39:32
+/* Smarty version 4.3.2, created on 2023-11-16 13:49:42
   from 'C:\OSPanel\domains\project\admin\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_653a25c45dc4d6_46544888',
+  'unifunc' => 'content_6555f3c6c7a0d9_05461072',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10248de3e70137d7423bcbfca55660b543c865d1' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\main.tpl',
-      1 => 1698305885,
+      1 => 1700131781,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_653a25c45dc4d6_46544888 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6555f3c6c7a0d9_05461072 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -113,7 +113,7 @@ function content_653a25c45dc4d6_46544888 (Smarty_Internal_Template $_smarty_tpl)
                                         <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Замовлення</span></a>
                                         <ul class="pcoded-submenu">
                                             <li class=""><a href="order_status.php" class="">Виконання/Видалення</a></li>
-                                            <li class=""><a href="archiv.php" class="">Архів</a></li>
+                                            <li class=""><a href="order_archiv.php" class="">Архів</a></li>
                                                                                     </ul>
                                     </li>
                             <?php } else { ?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-11-02 13:26:54
+/* Smarty version 4.3.2, created on 2023-11-16 13:44:16
   from 'C:\OSPanel\domains\project\admin\templates\order_status.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_6543796e84ee48_56963453',
+  'unifunc' => 'content_6555f28053dd66_49030742',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54150aa6dc588a2f43babd837435f15617c690f2' => 
     array (
       0 => 'C:\\OSPanel\\domains\\project\\admin\\templates\\order_status.tpl',
-      1 => 1698920787,
+      1 => 1700131454,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6543796e84ee48_56963453 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6555f28053dd66_49030742 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
     <style>
 
@@ -63,7 +63,9 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['client']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['description'];?>
 </td>
-                    <td><a href="">Archiv</a></td>
+                    <td><a href="arhiving.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
+&data=<?php echo $_smarty_tpl->tpl_vars['client']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['data'];?>
+&tmp=client">Archiv</a></td>
                     <td><a href="order_dell.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
 &data=<?php echo $_smarty_tpl->tpl_vars['client']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['data'];?>
 &tmp=client">Dell</a></td>
@@ -137,7 +139,9 @@ for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['visitor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['desc'];?>
 </td>
-                <td><a href="">Archiv</a></td>
+                <td><a href="arhiving.php?id=<?php echo $_smarty_tpl->tpl_vars['visitor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+&data=<?php echo $_smarty_tpl->tpl_vars['visitor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['data'];?>
+&tmp=visitor">Archiv</a></td>
                 <td><a href="order_dell.php?id=<?php echo $_smarty_tpl->tpl_vars['visitor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &data=<?php echo $_smarty_tpl->tpl_vars['visitor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['data'];?>
 &tmp=visitor">Dell</a></td>

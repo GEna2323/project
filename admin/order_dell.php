@@ -34,6 +34,9 @@ if (isset($_SESSION['user_id'], $_SESSION['user_email'], $_SESSION['user_name'],
         $smarty_order -> assign('tmp', $_GET['tmp']);
 
         $content = $smarty_order -> fetch('order_dell.tpl');
+
+        header('refresh:2;url=order_status.php');
+
     }
     elseif(isset($_POST['send'], $_POST['id'], $_POST['data'], $_POST['tmp'], $_POST['dell']) && !empty($_POST['id']) && !empty($_POST['data']) && $_POST['dell'] == 'Yes'){
 

@@ -103,6 +103,25 @@
         {if isset($setting_page) && $setting_page == 'list'}
         <div class="main__categories categories">
             <div class="categories__body">
+                <div class="categories__tirle">Filter</div>
+                <div class="categories__text">
+                    <form action="list.php" method="get">
+                        Пошук:
+                        <br><input type="text" name="search" {if isset($search) && !empty($search)}value="{$search}" {else} placeholder="Назва товару"{/if}><br>
+                        Мін Ціна:
+                        <br><input type="number" min="0" name="min_price" {if isset($min_price) && !empty($min_price)}value="{$min_price}" {else}placeholder="Min Price"{/if}><br>
+                        Макс. Ціна:
+                        <br><input type="number" min="0" name="max_price" {if isset($max_price) && !empty($max_price)}value="{$max_price}" {else}placeholder="Max Price"{/if}><br>
+                        {if isset($id_firm) && !empty($id_firm)}
+                            <input type="hidden" name="id_firm" value="{$id_firm}">
+                        {/if}
+                        {if isset($sort) && !empty($sort)}
+                            <input type="hidden" name="sort" value="{$sort}">
+                        {/if}
+                        <input type="submit" name="send" value="Прийняти">
+                    </form>
+                </div>
+
                 <div class="categories__tirle">Firms</div>
                 {section loop = $firms name = k}
                 <div class="categories__text" {if isset($id_firm) && $id_firm == $firms[k].id}style="background-color:white; flex:1 1 auto; border-radius:20px"{/if}>
@@ -121,24 +140,6 @@
                     <a href="list.php" class="">
                         <div class="categories__paragraf">No Filter</div>
                     </a>
-                </div>
-                <div class="categories__tirle">Filter</div>
-                <div class="categories__text">
-                    <form action="list.php" method="get">
-                        Пошук:
-                        <br><input type="text" name="search" {if isset($search) && !empty($search)}value="{$search}" {else} placeholder="Назва товару"{/if}><br>
-                        Мін Ціна:
-                        <br><input type="number" min="0" name="min_price" {if isset($min_price) && !empty($min_price)}value="{$min_price}" {else}placeholder="Min Price"{/if}><br>
-                        Макс. Ціна:
-                        <br><input type="number" min="0" name="max_price" {if isset($max_price) && !empty($max_price)}value="{$max_price}" {else}placeholder="Max Price"{/if}><br>
-                        {if isset($id_firm) && !empty($id_firm)}
-                            <input type="hidden" name="id_firm" value="{$id_firm}">
-                        {/if}
-                        {if isset($sort) && !empty($sort)}
-                            <input type="hidden" name="sort" value="{$sort}">
-                        {/if}
-                        <input type="submit" name="send" value="Прийняти">
-                    </form>
                 </div>
 
             </div>
@@ -204,7 +205,7 @@
             <div class="footer__main _container">
                 <div class="foter__row">
                     <div class="footer__column">
-                        <div class="footer__label">Company Info</div>
+                        <div class="footer__label">{#com_info#}</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">About Us</a></li>
@@ -215,7 +216,7 @@
                         </nav>
                     </div>
                     <div class="footer__column">
-                        <div class="footer__label">Help</div>
+                        <div class="footer__label">{#help#}</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">Delivery and payment</a></li>
@@ -226,7 +227,7 @@
                         </nav>
                     </div>
                     <div class="footer__column">
-                        <div class="footer__label">Services</div>
+                        <div class="footer__label">{#servises#}</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">Bonus account</a></li>
@@ -237,7 +238,7 @@
                         </nav>
                     </div>
                     <div class="footer__column">
-                        <div class="footer__label">Partners</div>
+                        <div class="footer__label">{#partners#}</div>
                         <nav class="footer__menu menu-footer">
                             <ul class="menu-footer__list">
                                 <li class="menu-footer__item"><a href="" class="menu-footer__link">Sell on G&V Shop</a></li>
@@ -254,11 +255,11 @@
             <div class="footer__container _container">
                 <div class="footer__copy">Made With Love By Figmaland All Right Reserved </div>
                 <div class="footer__social social">
-                    <a href="" class="social__item">
-                        <img src="img/footer/social/01.svg" alt="social">
+                    <a href="{$script}?leng=en" class="social__item">
+                        <img width="30px" src="img/footer/flags/Flag_of_the_United_Kingdom.png" alt="social">
                     </a>
-                    <a href="" class="social__item">
-                        <img src="img/footer/social/02.svg" alt="social">
+                    <a href="{$script}?leng=ua" class="social__item">
+                        <img width="30px" src="img/footer/flags/Flag_of_Ukraine.svg.png" alt="social">
                     </a>
                     <a href="" class="social__item">
                         <img src="img/footer/social/03.svg" alt="social">

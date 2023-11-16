@@ -27,7 +27,7 @@
                     <td>{$client[k].adress}</td>
                     <td>{$client[k].data}</td>
                     <td>{$client[k].description}</td>
-                    <td><a href="">Archiv</a></td>
+                    <td><a href="arhiving.php?id={$client[k].id}&data={$client[k].data}&tmp=client">Archiv</a></td>
                     <td><a href="order_dell.php?id={$client[k].id}&data={$client[k].data}&tmp=client">Dell</a></td>
                 </tr>
                 <tr>
@@ -77,7 +77,7 @@
                 <td>{$visitor[i].adress}</td>
                 <td>{$visitor[i].data}</td>
                 <td>{$visitor[i].desc}</td>
-                <td><a href="">Archiv</a></td>
+                <td><a href="arhiving.php?id={$visitor[i].id}&data={$visitor[i].data}&tmp=visitor">Archiv</a></td>
                 <td><a href="order_dell.php?id={$visitor[i].id}&data={$visitor[i].data}&tmp=visitor">Dell</a></td>
             </tr>
             <tr>
